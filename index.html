@@ -82,8 +82,8 @@ h1 .hl::after{content:"";position:absolute;left:-.04em;right:-.04em;bottom:.08em
 .phone-cap{margin:0;font-size:.86rem;color:var(--muted);text-align:center;max-width:320px}
 .phone-cap b{color:var(--ink);font-weight:600}
 .side-stack{display:flex;flex-direction:column;gap:16px;flex:none}
-.phone{position:relative;width:min(320px,74vw);border-radius:40px;flex:none;background:#0d0d0f;padding:10px;box-shadow:0 30px 60px -20px rgba(23,22,26,.45),0 0 0 1px rgba(23,22,26,.08)}
-.phone .screen{position:relative;width:100%;aspect-ratio:9/16;border-radius:31px;overflow:hidden;background:#000}
+.phone{position:relative;width:min(320px,74vw);border-radius:20px;flex:none;overflow:hidden;}
+.phone .screen{position:relative;width:100%;aspect-ratio:9/16;border-radius:20px;overflow:hidden;background:#000}
 .phone video{width:100%;height:100%;object-fit:cover}
 
 .phone .hud{position:absolute;inset:auto 14px 16px 14px;display:flex;justify-content:space-between;align-items:flex-end;gap:8px;z-index:2;color:#fff}
@@ -173,18 +173,17 @@ h2{font:600 clamp(2rem,4.2vw,3.2rem)/1.02 var(--display);letter-spacing:-.01em;m
 @media (max-width:560px){.steps{grid-template-columns:1fr}}
 
 /* Leistungen und Preis */
-.offers{display:grid;grid-template-columns:1.25fr 1fr 1fr;gap:16px}
-@media (max-width:1100px){.offers{grid-template-columns:1fr 1fr}.offer.main{grid-column:1/-1}}
-.offer{border-radius:var(--r-lg);padding:32px;display:flex;flex-direction:column;gap:20px}
+.offers{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.offer{background:var(--card);border:1px solid var(--line);border-radius:var(--r-lg);padding:32px;display:flex;flex-direction:column;gap:20px}
 .offer.main{background:var(--card);border:1.5px solid var(--ink)}
-.offer.alt{background:var(--paper-2);border:1px solid var(--line)}
 .offer h3{font:600 1.8rem/1.05 var(--display);margin:0}
 .offer .price{display:flex;align-items:baseline;gap:4px 10px;flex-wrap:wrap}
 .offer .price b{white-space:nowrap}
 .offer .price b{font:600 3.2rem/1 var(--display);font-variant-numeric:tabular-nums}
 .offer .price span{color:var(--muted)}
-.offer ul{list-style:none;margin:0;padding:0;display:grid;gap:10px}
-.offer li{display:flex;gap:10px;align-items:flex-start}
+.offer ul{list-style:none;margin:0;padding:0}
+.offer li{padding:10px 0;border-top:1px solid var(--line)}
+.offer li:first-child{border-top:0;padding-top:0}
 .offer li svg{flex:none;width:20px;height:20px;stroke:var(--blue-ink);fill:none;stroke-width:2;margin-top:2px}
 .pkgs{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
 .pkgs div{border:1px solid var(--line-2);border-radius:12px;padding:12px;text-align:center}
@@ -271,7 +270,7 @@ h2{font:600 clamp(2rem,4.2vw,3.2rem)/1.02 var(--display);letter-spacing:-.01em;m
 .builder .small{font-size:.8rem;color:var(--muted);margin:0;text-align:center}
 @media (max-width:900px){.close{grid-template-columns:1fr;padding:32px 20px}}
 
-footer{padding:40px 0 calc(110px + env(safe-area-inset-bottom));font-size:.86rem;color:var(--muted);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+footer{padding:40px 0 calc(40px + env(safe-area-inset-bottom));font-size:.86rem;color:var(--muted);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 footer a{color:var(--ink-2);display:inline-block;padding:12px 4px}
 
 /* Mobile Abschluss-Leiste */
@@ -322,13 +321,12 @@ footer a{color:var(--ink-2);display:inline-block;padding:12px 4px}
 <main class="wrap" id="top">
   <div class="hero">
     <div class="reveal">
-            <h1>Jeden Monat <span class="hl">fertige Reels</span> für dein Unternehmen</h1>
+            <h1>Jeden Monat fertige Reels für dein Unternehmen</h1>
       <p class="lead">Ich komme zu dir, drehe in kurzer Zeit genug Material für mehrere Videos und liefere sie fertig geschnitten, mit Untertiteln, Logo und Musik.</p>
       <div class="cta">
         <a class="btn btn-main" href="#anfrage">Jetzt anfragen<svg><use href="#i-arrow"/></svg></a>
         <a class="btn btn-ghost" href="#arbeiten">Arbeiten ansehen<svg><use href="#i-arrow"/></svg></a>
       </div>
-      <div class="proof"><b>4 Videos</b><span>aus einem Dreh von nicht einmal einer Stunde, für Capex Green in Villach</span></div>
     </div>
     <div class="stage reveal">
             <div class="phone-wrap"><div class="phone">
@@ -337,7 +335,7 @@ footer a{color:var(--ink-2);display:inline-block;padding:12px 4px}
           <button class="sound" id="soundBtn" aria-label="Ton einschalten"><svg><use href="#i-mute"/></svg></button>
         </div>
       </div>
-      <p class="phone-cap"><b>Capex Green</b> · Biomassekraftwerk Villach · Ton an mit dem Lautsprecher</p></div>
+      <p class="phone-cap">Werbevideo für Capex Green, Villach</p></div>
       
     </div>
   </div>
@@ -380,27 +378,27 @@ footer a{color:var(--ink-2);display:inline-block;padding:12px 4px}
       <p class="intro">Jedes Unternehmen braucht etwas anderes. Erzähl mir kurz, worum es geht, dann bekommst du ein Angebot, das zu dir passt.</p>
     </div>
     <div class="offers reveal">
-      <div class="offer main">
+      <div class="offer">
         <h3>Reels jeden Monat</h3>
         <ul>
-          <li><svg><use href="#i-check"/></svg>Themen, Dreh bei dir vor Ort und fertiger Schnitt</li>
-          <li><svg><use href="#i-check"/></svg>2, 4 oder 8 Reels pro Monat, je bis 60 Sekunden</li>
-          <li><svg><use href="#i-check"/></svg>Untertitel, Logo, Musik und ein Textvorschlag zu jedem Reel</li>
+          <li>Themen, Dreh bei dir vor Ort und fertiger Schnitt</li>
+          <li>2, 4 oder 8 Reels pro Monat, je bis 60 Sekunden</li>
+          <li>Untertitel, Logo, Musik und ein Textvorschlag zu jedem Reel</li>
         </ul>
       </div>
-      <div class="offer alt">
+      <div class="offer">
         <h3>Videos und Posts</h3>
         <ul>
-          <li><svg><use href="#i-check"/></svg>Werbe- und Imagevideos im Hoch- oder Querformat</li>
-          <li><svg><use href="#i-check"/></svg>Recruiting- und Willkommensvideos</li>
-          <li><svg><use href="#i-check"/></svg>Instagram-Posts und Story-Grafiken</li>
+          <li>Werbe- und Imagevideos im Hoch- oder Querformat</li>
+          <li>Recruiting- und Willkommensvideos</li>
+          <li>Instagram-Posts und Story-Grafiken</li>
         </ul>
       </div>
-      <div class="offer alt">
+      <div class="offer">
         <h3>Websites</h3>
         <ul>
-          <li><svg><use href="#i-check"/></svg>Moderne Website, am Handy genauso gut wie am Laptop</li>
-          <li><svg><use href="#i-check"/></svg>Mit deinen Videos, Fotos und einer einfachen Anfrage</li>
+          <li>Moderne Website, am Handy genauso gut wie am Laptop</li>
+          <li>Mit deinen Videos, Fotos und einer einfachen Anfrage</li>
         </ul>
       </div>
     </div>
@@ -462,7 +460,6 @@ footer a{color:var(--ink-2);display:inline-block;padding:12px 4px}
   <span><a href="impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutz</a></span>
 </footer>
 
-<div class="dock" id="dock"><span><b>Reels und Videos</b>für dein Unternehmen</span><a class="btn btn-blue" href="#anfrage">Jetzt anfragen</a></div>
 
 <script>
 const WA = "https://wa.me/436641334560?text=";
@@ -533,10 +530,7 @@ update();
 /* Einblenden und Leiste */
 const io = new IntersectionObserver(es=>es.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add("in"); io.unobserve(e.target);} }),{threshold:.1});
 document.querySelectorAll(".reveal").forEach(el=>io.observe(el));
-const seen = new Set(), dock = $("dock");
-const upd = ()=>dock.classList.toggle("show", seen.size === 0 && scrollY > 400);
-[document.querySelector(".hero"), $("anfrage")].forEach(el=>new IntersectionObserver(([e])=>{ e.isIntersecting ? seen.add(el) : seen.delete(el); upd(); }).observe(el));
-addEventListener("scroll", upd, {passive:true});
+
 </script>
 </body>
 </html>
