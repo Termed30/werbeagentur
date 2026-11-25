@@ -284,6 +284,7 @@ footer a{color:var(--ink-2);display:inline-block;padding:12px 4px}
 .reveal.in{opacity:1;transform:none}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reveal{opacity:1;transform:none}.reel.on .bar i{animation:none;width:100%}*{transition:none!important}}
 </style>
+<script defer src="https://cloud.umami.is/script.js" data-website-id="4a9b408b-99a0-4748-a923-ed6d3a577a5a" data-domains="termed30.github.io" data-do-not-track="true"></script>
 </head>
 <body>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
@@ -671,6 +672,7 @@ function markInvalid(miss){
 }
 $("sendWa").addEventListener("click", e=>{
   const miss = missingFields();
+  if (!miss.length && window.umami) umami.track("WhatsApp-Anfrage", {leistung:[...state.what].join(", "), budget:state.budget});
   if (miss.length){
     e.preventDefault(); tried = true; markInvalid(miss);
     const first = $(miss[0][0]); first.scrollIntoView({behavior: reduce ? "auto" : "smooth", block:"center"});
