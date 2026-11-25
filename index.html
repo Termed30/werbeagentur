@@ -164,7 +164,12 @@ h2{font:600 clamp(2rem,4.2vw,3.2rem)/1.02 var(--display);letter-spacing:-.01em;m
 .vid .play i{width:52px;height:52px;border-radius:50%;background:var(--blue);display:grid;place-items:center;flex:none;transition:transform .15s var(--ease)}
 .vid .play:hover i{transform:scale(1.06)}
 .vid .play svg{width:18px;height:18px;fill:var(--ink);margin-left:3px}
-@media (max-width:900px){.case{grid-template-columns:1fr;gap:40px}}
+.case-flip{grid-template-columns:1.1fr .9fr}
+.vids3{grid-template-columns:repeat(3,1fr)}
+.case-stats3{grid-template-columns:repeat(3,1fr);max-width:480px}
+.case-stats3 b{white-space:nowrap;font-size:clamp(1.4rem,5vw,1.9rem)}
+@media (max-width:900px){.case,.case-flip{grid-template-columns:1fr;gap:40px}.case-flip .case-text{order:-1}}
+@media (max-width:560px){.vids3{grid-template-columns:repeat(3,72%);overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:6px}.vids3 .vid{scroll-snap-align:start}}
 
 /* Monatsplan */
 .planner{background:var(--ink);color:var(--paper);border-radius:var(--r-lg);padding:48px;display:grid;grid-template-columns:.85fr 1.15fr;gap:48px;align-items:center}
@@ -445,6 +450,21 @@ footer a{color:var(--ink-2);display:inline-block;padding:12px 4px}
       </div>
       <div class="vids reveal" id="vids"></div>
     </div>
+    <div class="case case-flip" style="margin-top:96px">
+      <div class="vids vids3 reveal" id="vids2"></div>
+      <div class="case-text reveal">
+        <p class="eyebrow">Referenz</p>
+        <h2>Naturheilpraxis Manuela Kaucic: 3 Videos in 2 Tagen</h2>
+        <p>Für die Naturheilpraxis von Manuela Kaucic sind drei Videos entstanden, die Menschen mit Stress und Erschöpfung direkt ansprechen und erklären, wie ihre Methode HNC funktioniert.</p>
+        <p>Gedreht haben wir insgesamt 1,5 Stunden. Zwei Tage später waren alle drei Videos fertig.</p>
+        <div class="case-stats case-stats3">
+          <div><b>1,5 h</b><span>Drehzeit</span></div>
+          <div><b>3</b><span>fertige Videos</span></div>
+          <div><b>2 Tage</b><span>bis zur Lieferung</span></div>
+        </div>
+        <a class="btn btn-main" href="#anfrage">Jetzt anfragen<svg><use href="#i-arrow"/></svg></a>
+      </div>
+    </div>
   </section>
 
   
@@ -579,10 +599,18 @@ if (!reduce) new IntersectionObserver(([e])=>{ e.isIntersecting ? playCenter() :
 else figs.forEach(f=>{ if (f.dataset.pos==="c") f.querySelector("video").controls = true; });
 
 /* Referenz-Videos */
-[
-  { src:"media/biomassekraftwerk.mp4", poster:"media/biomassekraftwerk.jpg", title:"Das neue Biomassekraftwerk", client:"Capex Green, Villach" },
-  { src:"media/miscanthus.mp4", poster:"media/miscanthus.jpg", title:"Was ist Miscanthus?", client:"Capex Green, Villach" }
-].forEach(v=>{
+const REFS = {
+  vids: [
+    { src:"media/biomassekraftwerk.mp4", poster:"media/biomassekraftwerk.jpg", title:"Das neue Biomassekraftwerk", client:"Capex Green, Villach" },
+    { src:"media/miscanthus.mp4", poster:"media/miscanthus.jpg", title:"Was ist Miscanthus?", client:"Capex Green, Villach" }
+  ],
+  vids2: [
+    { src:"media/kaucic-person.mp4", poster:"media/kaucic-person.jpg", title:"Du hältst alles zusammen", client:"Naturheilpraxis Manuela Kaucic" },
+    { src:"media/kaucic-stress.mp4", poster:"media/kaucic-stress.jpg", title:"Stress im Job", client:"Naturheilpraxis Manuela Kaucic" },
+    { src:"media/kaucic-hnc.mp4", poster:"media/kaucic-hnc.jpg", title:"Was ist HNC?", client:"Naturheilpraxis Manuela Kaucic" }
+  ]
+};
+Object.entries(REFS).forEach(([box, list])=>list.forEach(v=>{
   const f = document.createElement("figure"); f.className = "vid";
   f.innerHTML = `<div class="box"><video preload="none" playsinline></video><button class="play"><span class="t"></span><i><svg viewBox="0 0 24 24"><use href="#i-play"/></svg></i></button></div>`;
   const vid = f.querySelector("video"); vid.src = v.src; vid.poster = v.poster;
@@ -592,8 +620,8 @@ else figs.forEach(f=>{ if (f.dataset.pos==="c") f.querySelector("video").control
     document.querySelectorAll("video").forEach(o=>o!==vid && o.pause());
     vid.controls = true; vid.muted = false; vid.play().catch(()=>{}); e.currentTarget.remove();
   });
-  $("vids").appendChild(f);
-});
+  $(box).appendChild(f);
+}));
 
 /* Über mich: Sucher */
 (function(){
