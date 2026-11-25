@@ -56,7 +56,8 @@ img,video{max-width:100%;display:block}
 /* Buttons */
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;height:52px;padding:0 24px;border-radius:12px;font:600 1rem var(--body);text-decoration:none;border:1.5px solid var(--ink);cursor:pointer;white-space:nowrap;transition:background-color .15s var(--ease),color .15s var(--ease),border-color .15s var(--ease),transform .1s var(--ease)}
 .btn:active{transform:scale(.98)}
-.btn svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:1.75;flex:none}
+.btn svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:1.75;flex:none;transition:transform .2s var(--ease)}
+.btn:hover svg{transform:translateX(3px)}
 .btn-main{background:var(--ink);color:var(--paper)}
 .btn-main:hover{background:var(--blue-ink);border-color:var(--blue-ink)}
 .btn-ghost{background:transparent;color:var(--ink)}
@@ -124,7 +125,8 @@ h2{font:600 clamp(2rem,4.2vw,3.2rem)/1.02 var(--display);letter-spacing:-.01em;m
 .vids{display:grid;grid-template-columns:1fr 1fr;gap:16px}
 .vid{margin:0}
 .vid .box{position:relative;aspect-ratio:9/16;border-radius:var(--r-md);overflow:hidden;background:var(--ink)}
-.vid video{width:100%;height:100%;object-fit:cover}
+.vid video{width:100%;height:100%;object-fit:cover;transition:transform .6s var(--ease)}
+.vid:hover video{transform:scale(1.04)}
 .vid .play{position:absolute;inset:0;border:0;background:linear-gradient(transparent 55%,rgba(0,0,0,.45));cursor:pointer;display:flex;align-items:flex-end;justify-content:space-between;padding:16px;color:#fff;text-align:left;font:inherit}
 .vid .play span.t{font:600 1.05rem/1.2 var(--display)}
 .vid .play span.t small{display:block;font:400 .8rem var(--body);opacity:.85;margin-top:2px}
@@ -165,7 +167,14 @@ h2{font:600 clamp(2rem,4.2vw,3.2rem)/1.02 var(--display);letter-spacing:-.01em;m
 
 /* Ablauf */
 .steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:16px;counter-reset:s}
-.steps li{background:var(--card);border:1px solid var(--line);border-radius:var(--r-md);padding:24px;position:relative}
+.steps li{background:var(--card);border:1px solid var(--line);border-radius:var(--r-md);padding:24px;position:relative;cursor:default;transition:transform .3s var(--ease),background-color .3s var(--ease),color .3s var(--ease),box-shadow .3s var(--ease),border-color .3s var(--ease)}
+.steps li:hover,.steps li.on,.steps li:focus-visible{transform:translateY(-8px) scale(1.04);background:var(--ink);border-color:var(--ink);color:var(--paper);box-shadow:0 24px 40px -18px rgba(23,22,26,.45);z-index:1}
+.steps li:hover p,.steps li.on p{color:rgba(239,231,216,.8)}
+.steps li:hover .n,.steps li.on .n{background:var(--blue);color:var(--ink);transform:scale(1.12)}
+.steps .n{transition:background-color .3s var(--ease),color .3s var(--ease),transform .3s var(--ease)}
+.steps.in li{animation:rise .6s var(--ease) backwards;animation-delay:calc(var(--i) * 110ms)}
+@keyframes rise{from{opacity:0;transform:translateY(24px)}}
+.steps.reveal{opacity:1;transform:none}
 .steps .n{display:grid;place-items:center;width:32px;height:32px;border-radius:50%;background:var(--blue-soft);font:600 .95rem var(--body);color:var(--blue-ink)}
 .steps h3{font:600 1.35rem/1.15 var(--display);margin:12px 0 8px}
 .steps p{margin:0;color:var(--ink-2);font-size:.97rem}
@@ -174,7 +183,8 @@ h2{font:600 clamp(2rem,4.2vw,3.2rem)/1.02 var(--display);letter-spacing:-.01em;m
 
 /* Leistungen und Preis */
 .offers{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-.offer{background:var(--card);border:1px solid var(--line);border-radius:var(--r-lg);padding:32px;display:flex;flex-direction:column;gap:20px}
+.offer{background:var(--card);border:1px solid var(--line);border-radius:var(--r-lg);padding:32px;display:flex;flex-direction:column;gap:20px;transition:transform .3s var(--ease),box-shadow .3s var(--ease),border-color .3s var(--ease)}
+.offer:hover{transform:translateY(-6px);border-color:var(--ink);box-shadow:0 20px 36px -20px rgba(23,22,26,.35)}
 .offer.main{background:var(--card);border:1.5px solid var(--ink)}
 .offer h3{font:600 1.8rem/1.05 var(--display);margin:0}
 .offer .price{display:flex;align-items:baseline;gap:4px 10px;flex-wrap:wrap}
@@ -245,7 +255,8 @@ h2{font:600 clamp(2rem,4.2vw,3.2rem)/1.02 var(--display);letter-spacing:-.01em;m
 /* Fragen */
 .faq{display:grid;grid-template-columns:1fr 1fr;gap:0 48px}
 .faq details{border-top:1px solid var(--line)}
-.faq summary{cursor:pointer;font-weight:600;list-style:none;display:flex;justify-content:space-between;gap:12px;padding:20px 0}
+.faq summary:hover{color:var(--blue-ink)}
+.faq summary{cursor:pointer;transition:color .15s var(--ease);font-weight:600;list-style:none;display:flex;justify-content:space-between;gap:12px;padding:20px 0}
 .faq summary::-webkit-details-marker{display:none}
 .faq summary svg{flex:none;width:20px;height:20px;stroke:var(--ink-2);fill:none;stroke-width:1.5;transition:transform .2s var(--ease)}
 .faq details[open] summary svg{transform:rotate(45deg)}
@@ -304,7 +315,7 @@ footer a{color:var(--ink-2);display:inline-block;padding:12px 4px}
 
 .reveal{opacity:0;transform:translateY(12px);transition:opacity .6s var(--ease),transform .6s var(--ease)}
 .reveal.in{opacity:1;transform:none}
-@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reveal{opacity:1;transform:none}.reel.on .bar i{animation:none;width:100%}*{transition:none!important}}
+@media (prefers-reduced-motion:reduce){.steps.in li{animation:none}.steps li:hover,.steps li.on,.offer:hover{transform:none}html{scroll-behavior:auto}.reveal{opacity:1;transform:none}.reel.on .bar i{animation:none;width:100%}*{transition:none!important}}
 </style>
 <script defer src="https://cloud.umami.is/script.js" data-website-id="4a9b408b-99a0-4748-a923-ed6d3a577a5a" data-domains="termed30.github.io" data-do-not-track="true"></script>
 </head>
@@ -386,10 +397,10 @@ footer a{color:var(--ink-2);display:inline-block;padding:12px 4px}
       <p class="intro">Du brauchst keine Ideen und keine Schnitt-App. Dein Aufwand ist der Drehtermin und ein paar Minuten für Freigabe und Feedback.</p>
     </div>
     <ol class="steps reveal">
-      <li><span class="n">1</span><h3>Themenplan</h3><p>Ich schicke dir Reel-Ideen passend zu deinen Angeboten. Du gibst sie frei oder änderst sie.</p></li>
-      <li><span class="n">2</span><h3>Dreh bei dir</h3><p>Ein Termin vor Ort. Du musst nicht vor die Kamera, wenn du nicht willst.</p></li>
-      <li><span class="n">3</span><h3>Schnitt</h3><p>Innerhalb von 7 Werktagen bekommst du fertige Videos mit Untertiteln, Logo und Musik.</p></li>
-      <li><span class="n">4</span><h3>Posten</h3><p>Zu jedem Reel bekommst du einen Textvorschlag. Eine Korrekturrunde pro Reel ist dabei.</p></li>
+      <li style="--i:0" tabindex="0"><span class="n">1</span><h3>Themenplan</h3><p>Ich schicke dir Reel-Ideen passend zu deinen Angeboten. Du gibst sie frei oder änderst sie.</p></li>
+      <li style="--i:1" tabindex="0"><span class="n">2</span><h3>Dreh bei dir</h3><p>Ein Termin vor Ort. Du musst nicht vor die Kamera, wenn du nicht willst.</p></li>
+      <li style="--i:2" tabindex="0"><span class="n">3</span><h3>Schnitt</h3><p>Innerhalb von 7 Werktagen bekommst du fertige Videos mit Untertiteln, Logo und Musik.</p></li>
+      <li style="--i:3" tabindex="0"><span class="n">4</span><h3>Posten</h3><p>Zu jedem Reel bekommst du einen Textvorschlag. Eine Korrekturrunde pro Reel ist dabei.</p></li>
     </ol>
   </section>
 
@@ -539,6 +550,11 @@ sb.addEventListener("click", ()=>{
   const dv = $("dayVid");
   $("dayPlay").addEventListener("click", e=>{ document.querySelectorAll("video").forEach(o=>o!==dv && o.pause()); dv.controls = true; dv.play().catch(()=>{}); e.currentTarget.remove(); });
 })();
+
+/* Ablauf: Antippen am Handy */
+if (matchMedia("(hover: none)").matches) document.querySelectorAll(".steps li").forEach(li=>li.addEventListener("click",()=>{
+  document.querySelectorAll(".steps li").forEach(x=>x.classList.toggle("on", x===li && !li.classList.contains("on")));
+}));
 
 /* Anfrage */
 const MAIL = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
