@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Tobias Sereinig · Werbeagentur · Reels und Videos in Kärnten</title>
-<meta name="description" content="Jeden Monat fertige Reels für dein Unternehmen in Kärnten: ein Dreh bei dir vor Ort, Schnitt, Untertitel und Musik inklusive. Ab 359 € pro Monat.">
+<meta name="description" content="Jeden Monat fertige Reels für dein Unternehmen in Kärnten: ein Dreh bei dir vor Ort, Schnitt, Untertitel und Musik inklusive.">
 <meta name="theme-color" content="#efe7d8">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Tobias Sereinig · Werbeagentur · Reels für dein Unternehmen">
@@ -109,7 +109,7 @@ h1 .hl::after{content:"";position:absolute;left:-.04em;right:-.04em;bottom:.08em
 
 /* Abschnitte */
 section{padding:96px 0}
-.eyebrow{font:500 .82rem var(--mono);color:var(--blue-ink);margin:0 0 12px}
+.eyebrow{font:600 .9rem var(--body);color:var(--blue-ink);margin:0 0 12px}
 h2{font:600 clamp(2rem,4.2vw,3.2rem)/1.02 var(--display);letter-spacing:-.01em;margin:0 0 16px}
 .intro{color:var(--ink-2);font-size:1.08rem;max-width:56ch;margin:0}
 .head{display:flex;justify-content:space-between;align-items:flex-end;gap:32px;margin-bottom:48px;flex-wrap:wrap}
@@ -117,7 +117,7 @@ h2{font:600 clamp(2rem,4.2vw,3.2rem)/1.02 var(--display);letter-spacing:-.01em;m
 /* Referenz */
 .case{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;align-items:center}
 .case-text p{color:var(--ink-2);margin:0 0 16px}
-.case-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:28px 0}
+.case-stats{display:grid;grid-template-columns:repeat(2,1fr);max-width:360px;gap:12px;margin:28px 0}
 .case-stats div{background:var(--card);border:1px solid var(--line);border-radius:var(--r-md);padding:16px}
 .case-stats b{display:block;font:600 1.9rem/1 var(--display);font-variant-numeric:tabular-nums}
 .case-stats span{font-size:.84rem;color:var(--muted)}
@@ -166,7 +166,7 @@ h2{font:600 clamp(2rem,4.2vw,3.2rem)/1.02 var(--display);letter-spacing:-.01em;m
 /* Ablauf */
 .steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:16px;counter-reset:s}
 .steps li{background:var(--card);border:1px solid var(--line);border-radius:var(--r-md);padding:24px;position:relative}
-.steps .n{font:500 .78rem var(--mono);color:var(--blue-ink)}
+.steps .n{display:grid;place-items:center;width:32px;height:32px;border-radius:50%;background:var(--blue-soft);font:600 .95rem var(--body);color:var(--blue-ink)}
 .steps h3{font:600 1.35rem/1.15 var(--display);margin:12px 0 8px}
 .steps p{margin:0;color:var(--ink-2);font-size:.97rem}
 @media (max-width:980px){.steps{grid-template-columns:1fr 1fr}}
@@ -175,7 +175,7 @@ h2{font:600 clamp(2rem,4.2vw,3.2rem)/1.02 var(--display);letter-spacing:-.01em;m
 /* Leistungen und Preis */
 .offers{display:grid;grid-template-columns:1.25fr 1fr 1fr;gap:16px}
 @media (max-width:1100px){.offers{grid-template-columns:1fr 1fr}.offer.main{grid-column:1/-1}}
-.offer{border-radius:var(--r-lg);padding:36px;display:flex;flex-direction:column;gap:20px}
+.offer{border-radius:var(--r-lg);padding:32px;display:flex;flex-direction:column;gap:20px}
 .offer.main{background:var(--card);border:1.5px solid var(--ink)}
 .offer.alt{background:var(--paper-2);border:1px solid var(--line)}
 .offer h3{font:600 1.8rem/1.05 var(--display);margin:0}
@@ -196,6 +196,8 @@ h2{font:600 clamp(2rem,4.2vw,3.2rem)/1.02 var(--display);letter-spacing:-.01em;m
 @media (max-width:900px){.offers{grid-template-columns:1fr}.offer{padding:28px 24px}}
 
 /* Über mich */
+.portrait{width:min(400px,84vw);aspect-ratio:4/5;border-radius:var(--r-lg);overflow:hidden;background:var(--paper-2)}
+.portrait img{width:100%;height:100%;object-fit:cover}
 .about{display:grid;grid-template-columns:auto 1fr;gap:64px;align-items:center}
 .viewfinder{position:relative;width:min(400px,84vw);aspect-ratio:4/5;border-radius:var(--r-lg);overflow:hidden;background:var(--ink);cursor:crosshair;touch-action:manipulation}
 .viewfinder img{width:100%;height:100%;object-fit:cover;transform:scale(1.02);transition:transform .6s var(--ease)}
@@ -252,8 +254,8 @@ h2{font:600 clamp(2rem,4.2vw,3.2rem)/1.02 var(--display);letter-spacing:-.01em;m
 @media (max-width:520px){.f.two{grid-template-columns:1fr}}
 .reel.empty{cursor:default;opacity:.55}
 .reel.empty:hover{transform:none}
-.builder input[type=text]{font:16px var(--body);color:var(--ink);background:var(--card);border:1.5px solid var(--line-2);border-radius:10px;height:48px;padding:0 14px;width:100%}
-.builder input[type=text]:focus{outline:none;border-color:var(--blue-ink);box-shadow:0 0 0 3px var(--blue-soft)}
+.builder input{font:16px var(--body);color:var(--ink);background:var(--card);border:1.5px solid var(--line-2);border-radius:10px;height:48px;padding:0 14px;width:100%}
+.builder input:focus{outline:none;border-color:var(--blue-ink);box-shadow:0 0 0 3px var(--blue-soft)}
 .seg{display:flex;flex-wrap:wrap;gap:6px}
 .seg button{border:1.5px solid var(--line-2);background:var(--card);border-radius:10px;min-height:44px;padding:0 14px;font:500 .92rem var(--body);color:var(--ink);cursor:pointer;transition:background-color .15s var(--ease),border-color .15s var(--ease),color .15s var(--ease)}
 .seg button[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:var(--paper)}
@@ -262,7 +264,7 @@ h2{font:600 clamp(2rem,4.2vw,3.2rem)/1.02 var(--display);letter-spacing:-.01em;m
 .missing{margin:4px 0 0;font-size:.88rem;color:#a3362a;font-weight:500}
 .missing.shake{animation:shake .35s var(--ease)}
 @keyframes shake{25%{transform:translateX(-4px)}75%{transform:translateX(4px)}}
-.builder input.invalid{border-color:#a3362a;box-shadow:0 0 0 3px rgba(163,54,42,.12)}
+.builder input.invalid,.builder textarea.invalid,.builder select.invalid{border-color:#a3362a;box-shadow:0 0 0 3px rgba(163,54,42,.12)}
 .lbl.invalid{color:#a3362a;font-weight:600}
 #sendWa[aria-disabled="true"]{opacity:.45}
 .missing.ok{color:#2f6b3a}
@@ -311,7 +313,7 @@ footer a{color:var(--ink-2);display:inline-block;padding:12px 4px}
   <div class="wrap">
     <a class="logo" href="#top" aria-label="Tobias Sereinig, zum Seitenanfang"><span class="logo-mark"><i></i></span><span>Tobias Sereinig<small>Werbeagentur</small></span></a>
     <nav>
-      <a href="#arbeiten">Arbeiten</a><a href="#ablauf">Ablauf</a><a href="#preis">Preis</a><a href="#ueber-mich">Über mich</a>
+      <a href="#arbeiten">Arbeiten</a><a href="#ablauf">Ablauf</a><a href="#leistungen">Leistungen</a><a href="#ueber-mich">Über mich</a>
       <a class="btn btn-main btn-sm" href="#anfrage">Anfragen</a>
     </nav>
   </div>
@@ -320,21 +322,18 @@ footer a{color:var(--ink-2);display:inline-block;padding:12px 4px}
 <main class="wrap" id="top">
   <div class="hero">
     <div class="reveal">
-      <span class="kicker"><i></i>Reels und Videos für Unternehmen in Kärnten</span>
-      <h1>Jeden Monat <span class="hl">fertige Reels</span> für dein Unternehmen</h1>
+            <h1>Jeden Monat <span class="hl">fertige Reels</span> für dein Unternehmen</h1>
       <p class="lead">Ich komme zu dir, drehe in kurzer Zeit genug Material für mehrere Videos und liefere sie fertig geschnitten, mit Untertiteln, Logo und Musik.</p>
       <div class="cta">
-        <a class="btn btn-main js-wa" href="#anfrage"><svg><use href="#i-msg"/></svg>Per WhatsApp anfragen</a>
+        <a class="btn btn-main" href="#anfrage">Jetzt anfragen<svg><use href="#i-arrow"/></svg></a>
         <a class="btn btn-ghost" href="#arbeiten">Arbeiten ansehen<svg><use href="#i-arrow"/></svg></a>
       </div>
       <div class="proof"><b>4 Videos</b><span>aus einem Dreh von nicht einmal einer Stunde, für Capex Green in Villach</span></div>
     </div>
     <div class="stage reveal">
-      <div class="side-stack"><div class="side-card"><b>3K · 4K</b>Hoch- und Querformat</div><div class="side-card"><b>7 Werktage</b>vom Dreh bis zum fertigen Video</div></div>
-      <div class="phone-wrap"><div class="phone">
+            <div class="phone-wrap"><div class="phone">
         <div class="screen">
-                    <span class="rec"><i></i>REC</span>
-          <video id="heroVid" src="media/hero.mp4" poster="media/biomassekraftwerk.jpg" muted loop playsinline preload="metadata" aria-label="Werbevideo für Capex Green"></video>
+                              <video id="heroVid" src="media/hero.mp4" poster="media/biomassekraftwerk.jpg" muted loop playsinline preload="metadata" aria-label="Werbevideo für Capex Green"></video>
           <button class="sound" id="soundBtn" aria-label="Ton einschalten"><svg><use href="#i-mute"/></svg></button>
         </div>
       </div>
@@ -343,13 +342,7 @@ footer a{color:var(--ink-2);display:inline-block;padding:12px 4px}
     </div>
   </div>
 
-  <div class="facts reveal">
-    <div><b>ab 359 €</b><span>pro Monat für 2 Reels</span></div>
-    <div><b>1 Dreh</b><span>bei dir vor Ort pro Monat</span></div>
-    <div><b>2 bis 8</b><span>fertige Reels pro Monat</span></div>
-    <div><b>0 €</b><span>für das Erstgespräch</span></div>
-  </div>
-
+  
   <section id="arbeiten">
     <div class="case">
       <div class="case-text reveal">
@@ -360,108 +353,69 @@ footer a{color:var(--ink-2);display:inline-block;padding:12px 4px}
         <div class="case-stats">
           <div><b>&lt; 1 h</b><span>Drehzeit</span></div>
           <div><b>4</b><span>fertige Videos</span></div>
-          <div><b>9:16</b><span>für Reels</span></div>
         </div>
-        <a class="btn btn-main js-wa" href="#anfrage"><svg><use href="#i-msg"/></svg>So etwas will ich auch</a>
+        <a class="btn btn-main" href="#anfrage">Jetzt anfragen<svg><use href="#i-arrow"/></svg></a>
       </div>
       <div class="vids reveal" id="vids"></div>
     </div>
   </section>
 
-  <section id="plan" style="padding-top:0">
-    <div class="planner reveal">
-      <div>
-        <p class="eyebrow">Probier es aus</p>
-        <h2 id="planTitle">Was würdest du posten?</h2>
-        <p class="intro">Wähle deine Branche und sieh, wie ein Monat mit 4 Reels bei dir aussehen kann. Die Themen legen wir später gemeinsam fest.</p>
-        <div class="biz">
-          <label for="biz">Deine Branche</label>
-          <select id="biz"><option value="">Bitte auswählen</option><option value="Friseur">Friseur und Barber</option><option value="Kosmetik">Kosmetik und Beauty</option><option value="Restaurant">Restaurant und Café</option><option value="Bäckerei">Bäckerei und Konditorei</option><option value="Hotel">Hotel und Pension</option><option value="Fitness">Fitness und Sport</option><option value="Handwerk">Handwerk und Bau</option><option value="Autowerkstatt">Autowerkstatt und Autohaus</option><option value="Geschäft">Handel und Geschäft</option><option value="Beratung">Büro, Beratung und Kanzlei</option><option value="Bank">Bank und Versicherung</option><option value="Immobilien">Immobilien</option><option value="Gesundheit">Gesundheit und Praxis</option><option value="Landwirtschaft">Landwirtschaft und Energie</option><option value="other">Etwas anderes</option></select>
-          <input id="bizOther" type="text" placeholder="Welche Branche? z. B. Tierarzt, Weingut, Verein" maxlength="40" hidden>
-        </div>
-      </div>
-      <div>
-        <div class="reels" id="reels"></div>
-        <div class="planner-foot"><span id="ideaLine">Wähle zuerst deine Branche</span><a class="btn btn-blue btn-sm" href="#anfrage">Diesen Plan anfragen<svg><use href="#i-arrow"/></svg></a></div>
-      </div>
-    </div>
-  </section>
-
+  
   <section id="ablauf" style="padding-top:0">
     <div class="head reveal">
       <div><p class="eyebrow">Ablauf</p><h2>So läuft ein Monat</h2></div>
       <p class="intro">Du brauchst keine Ideen und keine Schnitt-App. Dein Aufwand ist der Drehtermin und ein paar Minuten für Freigabe und Feedback.</p>
     </div>
     <ol class="steps reveal">
-      <li><span class="n">01 · Tag 1</span><h3>Themenplan</h3><p>Ich schicke dir Reel-Ideen passend zu deinen Angeboten. Du gibst sie frei oder änderst sie.</p></li>
-      <li><span class="n">02 · Tag 5 bis 10</span><h3>Dreh bei dir</h3><p>Ein Termin vor Ort. Du musst nicht vor die Kamera, wenn du nicht willst.</p></li>
-      <li><span class="n">03 · bis 7 Werktage danach</span><h3>Schnitt</h3><p>Fertige Videos mit Untertiteln, Logo und lizenzfreier Musik per Download-Link.</p></li>
-      <li><span class="n">04 · jede Woche</span><h3>Posten</h3><p>Zu jedem Reel bekommst du einen Textvorschlag. Eine Korrekturrunde pro Reel ist dabei.</p></li>
+      <li><span class="n">1</span><h3>Themenplan</h3><p>Ich schicke dir Reel-Ideen passend zu deinen Angeboten. Du gibst sie frei oder änderst sie.</p></li>
+      <li><span class="n">2</span><h3>Dreh bei dir</h3><p>Ein Termin vor Ort. Du musst nicht vor die Kamera, wenn du nicht willst.</p></li>
+      <li><span class="n">3</span><h3>Schnitt</h3><p>Innerhalb von 7 Werktagen bekommst du fertige Videos mit Untertiteln, Logo und Musik.</p></li>
+      <li><span class="n">4</span><h3>Posten</h3><p>Zu jedem Reel bekommst du einen Textvorschlag. Eine Korrekturrunde pro Reel ist dabei.</p></li>
     </ol>
   </section>
 
-  <section id="preis" style="padding-top:0">
+  <section id="leistungen" style="padding-top:0">
     <div class="head reveal">
-      <div><p class="eyebrow">Leistungen</p><h2>Was du bekommst</h2></div>
-      <p class="intro">Den genauen Preis bekommst du im Angebot, passend zu deinem Unternehmen und deinem Budget.</p>
+      <div><p class="eyebrow">Leistungen</p><h2>Was ich für dich mache</h2></div>
+      <p class="intro">Jedes Unternehmen braucht etwas anderes. Erzähl mir kurz, worum es geht, dann bekommst du ein Angebot, das zu dir passt.</p>
     </div>
     <div class="offers reveal">
       <div class="offer main">
-        <h3>Reel-Abo</h3>
-        <div class="price"><b>ab 359 €</b><span>pro Monat für 2 Reels, Mindestlaufzeit 3 Monate</span></div>
-        <div class="pkgs"><div><b>2</b><span>Reels</span></div><div><b>4</b><span>Reels</span></div><div><b>8</b><span>Reels</span></div></div>
+        <h3>Reels jeden Monat</h3>
         <ul>
-          <li><svg><use href="#i-check"/></svg>Themenplan und Textvorschläge für jedes Reel</li>
-          <li><svg><use href="#i-check"/></svg>Dreh bei dir vor Ort, Anfahrt bis 60 km inklusive</li>
-          <li><svg><use href="#i-check"/></svg>Reels bis 60 Sekunden, fertig geschnitten mit Untertiteln, Logo und Musik. Längere Reels kosten extra.</li>
-          <li><svg><use href="#i-check"/></svg>Lieferung innerhalb von 7 Werktagen nach dem Dreh</li>
-          <li><svg><use href="#i-check"/></svg>Mindestlaufzeit 3 Monate, danach monatlich kündbar</li>
+          <li><svg><use href="#i-check"/></svg>Themen, Dreh bei dir vor Ort und fertiger Schnitt</li>
+          <li><svg><use href="#i-check"/></svg>2, 4 oder 8 Reels pro Monat, je bis 60 Sekunden</li>
+          <li><svg><use href="#i-check"/></svg>Untertitel, Logo, Musik und ein Textvorschlag zu jedem Reel</li>
         </ul>
-        <a class="btn btn-main js-wa" href="#anfrage"><svg><use href="#i-msg"/></svg>Angebot anfragen</a>
       </div>
       <div class="offer alt">
         <h3>Videos und Posts</h3>
-        <div class="price"><b style="font-size:2.2rem">auf Anfrage</b></div>
         <ul>
-          <li><svg><use href="#i-check"/></svg>Werbevideos im Hochformat für Social Media</li>
-          <li><svg><use href="#i-check"/></svg>Videos im Querformat in 4K für Website, YouTube oder Präsentationen</li>
+          <li><svg><use href="#i-check"/></svg>Werbe- und Imagevideos im Hoch- oder Querformat</li>
+          <li><svg><use href="#i-check"/></svg>Recruiting- und Willkommensvideos</li>
           <li><svg><use href="#i-check"/></svg>Instagram-Posts und Story-Grafiken</li>
-          <li><svg><use href="#i-check"/></svg>Imagefilm, Recruiting- oder Willkommensvideo</li>
         </ul>
-        <a class="btn btn-ghost" href="#anfrage" data-pick="Einzelnes Video">Projekt anfragen<svg><use href="#i-arrow"/></svg></a>
       </div>
       <div class="offer alt">
         <h3>Websites</h3>
-        <div class="price"><b style="font-size:2.2rem">auf Anfrage</b></div>
         <ul>
-          <li><svg><use href="#i-check"/></svg>Moderne Website wie diese, am Handy genauso sauber wie am Laptop</li>
-          <li><svg><use href="#i-check"/></svg>Mit deinen Videos, Fotos und Anfrage per WhatsApp</li>
-          <li><svg><use href="#i-check"/></svg>Impressum und Datenschutz für Österreich vorbereitet</li>
+          <li><svg><use href="#i-check"/></svg>Moderne Website, am Handy genauso gut wie am Laptop</li>
+          <li><svg><use href="#i-check"/></svg>Mit deinen Videos, Fotos und einer einfachen Anfrage</li>
         </ul>
-        <a class="btn btn-ghost" href="#anfrage" data-pick="Website">Website anfragen<svg><use href="#i-arrow"/></svg></a>
       </div>
     </div>
-    <p class="price-note reveal"><svg><use href="#i-info"/></svg><span>Preise zum Stand vom 25.11.2026. Sie gelten zum Zeitpunkt deines Besuchs und können sich jederzeit ändern. Verbindlich ist nur der Preis in deinem unterschriebenen Angebot. Als Kleinunternehmer verrechne ich keine Umsatzsteuer. Das Angebot richtet sich an Unternehmen.</span></p>
+    <div class="reveal" style="margin-top:32px"><a class="btn btn-main" href="#anfrage">Jetzt anfragen<svg><use href="#i-arrow"/></svg></a></div>
   </section>
 
   <section id="ueber-mich" style="padding-top:0">
     <div class="about">
-      <div class="viewfinder reveal" id="vf" role="img" aria-label="Porträt von Tobias Sereinig im Kamera-Sucher">
-        <img src="media/tobias.jpg" alt="" width="800" height="1000" loading="lazy">
-        <span class="focus" id="focus"></span>
-        <div class="vf-ui"><span class="c tl"></span><span class="c tr"></span><span class="c bl"></span><span class="c br"></span><span class="r"><i></i>REC</span><span class="tc" id="vfTc">00:00:00</span><span class="meta"><span>3K · 9:16</span><span>Rosenbach</span></span></div>
-      </div>
+      <div class="portrait reveal"><img src="media/tobias.jpg" alt="Tobias Sereinig" width="800" height="1000" loading="lazy"></div>
       <div class="about-text reveal">
         <p class="eyebrow">Über mich</p>
         <h2>Hallo, ich bin Tobias</h2>
-        <p>Ich drehe und schneide Reels und Werbevideos für Unternehmen in Kärnten. Mein Büro ist in Rosenbach, zu den Drehs komme ich zu dir.</p>
-        <div class="atabs" role="tablist" aria-label="Mehr über mich">
-          <button role="tab" aria-selected="true" data-t="0">Was ich mache</button>
-          <button role="tab" aria-selected="false" data-t="1">Wie ich arbeite</button>
-          <button role="tab" aria-selected="false" data-t="2">Ausrüstung</button>
-        </div>
-        <p class="apanel" id="apanel" role="tabpanel" aria-live="polite"></p>
-        <p style="font-size:.86rem;color:var(--muted)">Tipp auf das Bild, um scharf zu stellen</p>
+        <p>Ich bin Jungunternehmer aus Rosenbach und setze um, was ich mir vornehme. Von der Idee, mich selbstständig zu machen, bis zu meinem ersten Arbeitstag als Selbstständiger hat es 14 Tage gedauert.</p>
+        <p>Vier Jahre war ich in Amerika und habe dort halbprofessionell Fußball gespielt. Die Disziplin von damals habe ich mitgenommen: Um 5 Uhr geht es ins Gym, danach an die Arbeit.</p>
+        <p>Wenn ich bei dir drehe, sorge ich dafür, dass wir ohne Umwege zu Videos kommen, die zu deinem Unternehmen passen.</p>
       </div>
     </div>
   </section>
@@ -482,34 +436,22 @@ footer a{color:var(--ink-2);display:inline-block;padding:12px 4px}
   <section id="anfrage" style="padding-top:0">
     <div class="close reveal">
       <div>
-        <p class="eyebrow">Anfrage in 30 Sekunden</p>
-        <h2>Lass uns über deine Videos reden</h2>
-        <p class="intro">Füll kurz alles aus, dann öffnet sich WhatsApp mit einer fertigen Nachricht, die du nur noch abschickst. Ich melde mich so schnell wie möglich, spätestens nach 2 Werktagen, mit einem Vorschlag.</p>
-        <div class="contact-lines">
-          <a href="tel:+436641334560">0664 1334560</a>
-          <a href="mailto:tobias.sereinig@gmail.com">tobias.sereinig@gmail.com</a>
-        </div>
+        <p class="eyebrow">Kontakt</p>
+        <h2>Jetzt anfragen</h2>
+        <p class="intro">Schreib mir kurz, worum es geht. Ich melde mich bei dir, wir reden kurz darüber, und dann bekommst du dein Angebot.</p>
       </div>
-      <form class="builder" id="builder" onsubmit="return false">
-        <div class="f"><span class="lbl" id="lWhat">Was brauchst du? Mehrere möglich</span>
-          <div class="seg multi" role="group" aria-labelledby="lWhat" data-k="what"><button type="button" aria-pressed="true">Reels jeden Monat</button><button type="button" aria-pressed="false">Einzelnes Video</button><button type="button" aria-pressed="false">Instagram-Posts</button><button type="button" aria-pressed="false">Website</button><button type="button" aria-pressed="false">Etwas anderes</button></div></div>
-        <div class="f" id="pkgWrap"><span class="lbl" id="lPkg">Wie viele Reels pro Monat?</span>
-          <div class="seg" role="group" aria-labelledby="lPkg" data-k="pkg"><button type="button" aria-pressed="false">2 Reels</button><button type="button" aria-pressed="true">4 Reels</button><button type="button" aria-pressed="false">8 Reels</button><button type="button" aria-pressed="false">Weiß ich noch nicht</button></div></div>
-        <div class="f" id="otherWrap" hidden><label for="bOther">Was brauchst du genau?</label><input id="bOther" type="text" maxlength="200" placeholder="z. B. Drohnenaufnahmen vom Weinberg"></div>
+      <form class="builder" id="builder" onsubmit="return false" novalidate>
+        <div class="f"><label for="bName">Name</label><input id="bName" type="text" maxlength="80" autocomplete="name"></div>
         <div class="f two">
-          <div class="f"><label for="bBiz">Unternehmen</label><input id="bBiz" type="text" placeholder="z. B. Tischlerei Huber" maxlength="80" autocomplete="organization"></div>
-          <div class="f"><label for="bName">Dein Name</label><input id="bName" type="text" placeholder="Vor- und Nachname" maxlength="80" autocomplete="name"></div>
+          <div class="f"><label for="bMail">E-Mail</label><input id="bMail" type="email" inputmode="email" maxlength="100" autocomplete="email"></div>
+          <div class="f"><label for="bTel">Telefon</label><input id="bTel" type="tel" inputmode="tel" maxlength="30" autocomplete="tel"></div>
         </div>
-        <div class="f"><label for="bAddr">Adresse für Angebot und Vertrag</label><input id="bAddr" type="text" placeholder="Straße, PLZ, Ort" maxlength="120" autocomplete="street-address"></div>
-        <div class="f"><label for="bMail">E-Mail für Angebot und Vertrag</label><input id="bMail" type="text" inputmode="email" placeholder="name@firma.at" maxlength="100" autocomplete="email"></div>
-        <div class="f"><span class="lbl" id="lStart">Wann möchtest du starten?</span>
-          <div class="seg" role="group" aria-labelledby="lStart" data-k="start"><button type="button" aria-pressed="false">So bald wie möglich</button><button type="button" aria-pressed="false">Nächsten Monat</button><button type="button" aria-pressed="false">Später</button></div></div>
-        <div class="f"><span class="lbl" id="lBud">Dein Budget pro Monat oder Projekt</span>
-          <div class="seg" role="group" aria-labelledby="lBud" data-k="budget"><button type="button" aria-pressed="false">bis 400 €</button><button type="button" aria-pressed="false">400 bis 700 €</button><button type="button" aria-pressed="false">700 bis 1.000 €</button><button type="button" aria-pressed="false">1.000 bis 2.000 €</button><button type="button" aria-pressed="false">über 2.000 €</button></div></div>
-        <div class="f"><label for="bIdea">Kurz deine Idee (freiwillig)</label><input id="bIdea" type="text" maxlength="200" placeholder="z. B. Wir suchen Lehrlinge und wollen unser Team zeigen"></div>
-        <div class="f"><span class="lbl">Deine Nachricht</span><div class="preview" id="preview"></div><p class="missing" id="missing"></p></div>
-        <a class="btn btn-main" id="sendWa" href="https://wa.me/436641334560"><svg><use href="#i-msg"/></svg>In WhatsApp öffnen</a>
-        <p class="small">Der Knopf funktioniert, sobald alles ausgefüllt ist. Es wird nichts automatisch gesendet, du siehst die Nachricht vorher in WhatsApp.</p>
+        <div class="f"><label for="bText">Worum geht es?</label><textarea id="bText" rows="4" maxlength="600" placeholder="z. B. Wir sind eine Tischlerei in Villach und möchten regelmäßig Reels für Instagram."></textarea></div>
+        <div class="f"><label for="bBudget">Budget pro Monat für Videos und Social Media</label>
+          <select id="bBudget"><option value="">Bitte auswählen</option><option>bis 400 €</option><option>400 bis 700 €</option><option>700 bis 1.000 €</option><option>1.000 bis 2.000 €</option><option>über 2.000 €</option></select></div>
+        <p class="missing" id="missing" aria-live="polite"></p>
+        <a class="btn btn-main" id="sendWa" href="https://wa.me/436641334560"><svg><use href="#i-msg"/></svg>Anfrage per WhatsApp senden</a>
+        <p class="small">WhatsApp öffnet sich mit deiner fertigen Nachricht, du musst nur noch auf Senden tippen.</p>
       </form>
     </div>
   </section>
@@ -520,20 +462,19 @@ footer a{color:var(--ink-2);display:inline-block;padding:12px 4px}
   <span><a href="impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutz</a></span>
 </footer>
 
-<div class="dock" id="dock"><span><b>Reels ab 359 €</b>pro Monat</span><a class="btn btn-blue js-wa" href="#anfrage"><svg><use href="#i-msg"/></svg>Anfragen</a></div>
+<div class="dock" id="dock"><span><b>Reels und Videos</b>für dein Unternehmen</span><a class="btn btn-blue" href="#anfrage">Jetzt anfragen</a></div>
 
 <script>
 const WA = "https://wa.me/436641334560?text=";
 const $ = id => document.getElementById(id);
 const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-/* Kopfzeile */
 const nav = $("nav");
 addEventListener("scroll", ()=>nav.classList.toggle("scrolled", scrollY > 8), {passive:true});
 
-/* Hero-Video */
+/* Startvideo */
 const hv = $("heroVid"), sb = $("soundBtn");
-if (!reduce) { new IntersectionObserver(([e])=>{ e.isIntersecting ? hv.play().catch(()=>{}) : hv.pause(); },{threshold:.3}).observe(hv); }
+if (!reduce) new IntersectionObserver(([e])=>{ e.isIntersecting ? hv.play().catch(()=>{}) : hv.pause(); },{threshold:.3}).observe(hv);
 sb.addEventListener("click", ()=>{
   hv.muted = !hv.muted; if (hv.paused) hv.play().catch(()=>{});
   sb.setAttribute("aria-label", hv.muted ? "Ton einschalten" : "Ton ausschalten");
@@ -541,180 +482,53 @@ sb.addEventListener("click", ()=>{
 });
 
 /* Referenz-Videos */
-const VIDEOS = [
+[
   { src:"media/biomassekraftwerk.mp4", poster:"media/biomassekraftwerk.jpg", title:"Das neue Biomassekraftwerk", client:"Capex Green, Villach" },
   { src:"media/miscanthus.mp4", poster:"media/miscanthus.jpg", title:"Was ist Miscanthus?", client:"Capex Green, Villach" }
-];
-VIDEOS.forEach(v=>{
+].forEach(v=>{
   const f = document.createElement("figure"); f.className = "vid";
   f.innerHTML = `<div class="box"><video preload="none" playsinline></video><button class="play"><span class="t"></span><i><svg viewBox="0 0 24 24"><use href="#i-play"/></svg></i></button></div>`;
   const vid = f.querySelector("video"); vid.src = v.src; vid.poster = v.poster;
-  f.querySelector(".play").setAttribute("aria-label", "Video abspielen: " + v.title);
+  const btn = f.querySelector(".play"); btn.setAttribute("aria-label", "Video abspielen: " + v.title);
   const t = f.querySelector(".t"); t.textContent = v.title; const sm = document.createElement("small"); sm.textContent = v.client; t.appendChild(sm);
-  f.querySelector(".play").addEventListener("click", e=>{
+  btn.addEventListener("click", e=>{
     document.querySelectorAll("video").forEach(o=>o!==vid && o.pause());
     vid.controls = true; vid.muted = false; vid.play().catch(()=>{}); e.currentTarget.remove();
   });
   $("vids").appendChild(f);
 });
 
-/* Monatsplan */
-const GROUPS = [
-  [/gesundheit|praxis|arzt|ärzt|therap|pflege|apotheke|tierarzt/i, "s-users", [["Eure Praxis","Räume und Empfang, damit sich Patienten vorab orientieren","s-cam"],["Eine Frage, eine Antwort","Eine häufige Frage ruhig und verständlich erklärt","s-spark"],["Team im Porträt","Wer euch empfängt und betreut","s-users"],["Termin und Anfahrt","Wie man zu euch kommt und einen Termin bucht","s-tag"]]],
-  [/energie|kraftwerk|solar|photovolt|landwirt|bauernhof|\bhof\b|forst|holz|biomass/i, "s-spark", [["Vor Ort","Wo eure Arbeit passiert, draußen und echt","s-cam"],["So funktioniert es","Ein Ablauf einfach erklärt, Schritt für Schritt","s-spark"],["Wer dahintersteht","Das Team und warum es das macht","s-users"],["Was als Nächstes kommt","Ein Projekt, ein Termin oder eine Einladung","s-tag"]]],
-  [/kosmetik|beauty|nagel|nail|massage|wellness|spa/i, "s-spark", [["Dein Raum","Wie es bei euch aussieht, bevor die erste Kundin kommt","s-cam"],["Eine Behandlung","Ablauf in ruhigen Bildern, Schritt für Schritt","s-spark"],["Wer dich behandelt","Das Team und was es besonders gern macht","s-users"],["Termin im Monat","Ein Angebot mit klarem Buchungslink","s-tag"]]],
-  [/fris|barb|salon|haar/i, "s-scissors", [["Hinter den Kulissen","Ein Morgen im Salon, bevor die Kunden kommen","s-cam"],["So entsteht es","Ein Schnitt im Zeitraffer, Schritt für Schritt","s-scissors"],["Team","Wer dir die Haare schneidet und was er gern macht","s-users"],["Angebot des Monats","Zum Beispiel Färben im Dezember, mit Termin-Link","s-tag"]]],
-  [/restaur|gastro|gasth|wirt|café|cafe|kaffee|bar\b|pizz|imbiss|bäck|baeck|konditor|küche|catering/i, "s-cup", [["Vor dem Aufsperren","Was vorbereitet wird, bevor geöffnet ist","s-cam"],["Ein Produkt entsteht","Vom Rohstoff bis auf den Teller in 30 Sekunden","s-cup"],["Wer bei euch arbeitet","Das Team stellt sich in einem Satz vor","s-users"],["Diese Woche neu","Was es gerade gibt, mit Reservierung oder Bestellung","s-tag"]]],
-  [/fitness|gym|studio|yoga|pilates|physio|sport|training/i, "s-spark", [["Ein Tag im Studio","Der Raum, die Geräte, die Stimmung","s-cam"],["Eine Übung erklärt","Richtig gemacht in 20 Sekunden","s-spark"],["Trainer im Porträt","Wer dich betreut und warum","s-users"],["Probetraining","Einladung mit klarem Termin","s-tag"]]],
-  [/tischl|schrein|elektr|install|maler|dach|bau|handwerk|schloss|zimmer|fliesen|spengler|garten|metall/i, "s-tool", [["Auf der Baustelle","Ein Tag beim Team, ohne gestellte Szenen","s-cam"],["Detail im Zeitraffer","Ein Arbeitsschritt, den sonst niemand sieht","s-tool"],["Lehrling gesucht","Das Team erzählt, wie die Arbeit wirklich ist","s-users"],["Fertiges Projekt","Das Ergebnis mit Ort und Anfrage-Link","s-tag"]]],
-  [/hotel|pension|ferien|camping|gasthof|apartment|urlaub/i, "s-cam", [["Morgens im Haus","Frühstück, Licht, die ersten Gäste","s-cam"],["Ein Zimmer zeigen","In 20 Sekunden durch das schönste Zimmer","s-spark"],["Gastgeber","Wer euch empfängt und was er gern empfiehlt","s-users"],["Angebot der Saison","Ein Paket mit Datum und Buchungslink","s-tag"]]],
-  [/auto|kfz|werkstatt|reifen|motorrad|fahrzeug/i, "s-tool", [["Morgens in der Werkstatt","Wenn die ersten Autos reinrollen","s-cam"],["Ein Handgriff erklärt","Was beim Service wirklich passiert","s-tool"],["Mechaniker im Porträt","Wer an deinem Auto arbeitet","s-users"],["Aktion des Monats","Zum Beispiel Reifenwechsel, mit Terminlink","s-tag"]]],
-  [/shop|laden|boutique|geschäft|handel|mode|blumen|optik|buch|möbel/i, "s-tag", [["Neu eingetroffen","Was gerade ins Regal kommt","s-cam"],["Ein Produkt im Detail","Warum es sich lohnt, in 20 Sekunden","s-spark"],["Beratung","Wer dich im Geschäft berät","s-users"],["Aktion der Woche","Ein Angebot mit Datum und Adresse","s-tag"]]],
-  [/steuer|kanzlei|anwalt|notar|versicher|bank|büro|buero|beratung|immobil|makler|agentur|it\b|software/i, "s-users", [["Ein Tag im Büro","Wer ihr seid und wie euer Alltag aussieht","s-cam"],["Eine Frage, eine Antwort","Eine häufige Kundenfrage, kurz und verständlich erklärt","s-spark"],["Team im Porträt","Wer sich um deine Anliegen kümmert","s-users"],["Termin vereinbaren","Ein klarer nächster Schritt mit Link","s-tag"]]]
-];
-
-function ideasFor(name){
-  const n = (name || "").trim();
-  if (!n) return [["Hinter den Kulissen","Wie ein ganz normaler Tag bei dir aussieht","s-cam"],["So entsteht es","Ein Arbeitsschritt im Zeitraffer","s-spark"],["Team im Porträt","Wer bei dir arbeitet, in einem Satz","s-users"],["Angebot des Monats","Ein Angebot mit klarem nächsten Schritt","s-tag"]];
-  const g = GROUPS.find(([rx]) => rx.test(n));
-  if (g) return g[2];
-  return [["Ein Tag bei euch",`Wie der Alltag bei ${n} aussieht`,"s-cam"],["So arbeiten wir","Ein Arbeitsschritt, den Kunden sonst nicht sehen","s-spark"],["Team im Porträt",`Wer bei ${n} arbeitet, in einem Satz`,"s-users"],["Häufige Frage","Eine Kundenfrage, kurz und verständlich beantwortet","s-tag"]];
-}
-let business = "", active = 0;
-function drawReels(){
-  const box = $("reels"); box.innerHTML = "";
-  if (!business.trim()){
-    for (let i=0;i<4;i++){ const d=document.createElement("div"); d.className="reel empty"; d.innerHTML=`<div><div class="bar"></div><div class="wk">Woche ${i+1}</div></div><div class="ic"><svg viewBox="0 0 24 24"><use href="#s-cam"/></svg></div><div><b>Dein Reel</b><small>Wähle links deine Branche</small></div>`; box.appendChild(d); }
-    $("ideaLine").textContent = "Wähle zuerst deine Branche"; $("planTitle").textContent = "Was würdest du posten?"; return;
-  }
-  const list = ideasFor(business);
-  list.forEach(([t,s,ic],i)=>{
-    const b = document.createElement("button");
-    b.className = "reel" + (i===active ? " on" : ""); b.type = "button";
-    b.innerHTML = `<div><div class="bar"><i></i></div><div class="wk">Woche ${i+1}</div></div><div class="ic"><svg viewBox="0 0 24 24"><use href="#${ic}"/></svg></div><div><b></b><small></small></div>`;
-    b.querySelector("b").textContent = t; b.querySelector("small").textContent = s;
-    b.addEventListener("click", ()=>{ active = i; drawReels(); buildMsg(); });
-    box.appendChild(b);
-  });
-  $("ideaLine").textContent = `Woche ${active+1}: ${list[active][0]}`;
-  $("planTitle").textContent = `Dein Monat: ${branchLabel()}`;
-}
-function branchLabel(){ const sel=$("biz"); return sel.value==="other" ? ($("bizOther").value.trim() || "dein Unternehmen") : sel.options[sel.selectedIndex].text; }
-function syncBranch(from){
-  const v = from.value; $("biz").value = v;
-  $("bizOther").hidden = v !== "other";
-  business = v === "other" ? $("bizOther").value : v; active = 0; drawReels(); buildMsg();
-}
-$("biz").addEventListener("change", e=>{ syncBranch(e.target); if (e.target.value==="other") $("bizOther").focus(); });
-let deb;
-$("bizOther").addEventListener("input", e=>{ clearTimeout(deb); deb = setTimeout(()=>{ business = e.target.value; active = 0; drawReels(); buildMsg(); }, 200); });
-drawReels();
-
-/* Über mich */
-const ABOUT = [
-  "Reels im Hochformat für Instagram, TikTok und Facebook und Videos im Querformat für Website, YouTube oder Präsentationen. Ich plane die Themen, drehe bei dir vor Ort und liefere fertig geschnittene Videos mit Untertiteln, Logo und Musik.",
-  "Die Themen legen wir gemeinsam fest, damit die Videos zu dir passen. Ich zeige deine Arbeit und dein Team so, wie sie sind. Feedback kommt gesammelt, so bleibt dein Aufwand klein.",
-  "Ich filme mit der DJI Osmo Pocket 4P: im Hochformat in 3K, im Querformat in 4K. Der eingebaute Gimbal hält die Bilder ruhig, auch wenn ich mich bewege. Geschnitten wird mit Adobe und CapCut, die Musik ist lizenzfrei."
-];
-(function(){
-  const panel = $("apanel"), tabs = document.querySelectorAll(".atabs button");
-  panel.textContent = ABOUT[0];
-  tabs.forEach(b=>b.addEventListener("click",()=>{
-    tabs.forEach(x=>x.setAttribute("aria-selected", x===b));
-    panel.classList.add("fade");
-    setTimeout(()=>{ panel.textContent = ABOUT[+b.dataset.t]; panel.classList.remove("fade"); }, 180);
-  }));
-  const vf = $("vf"), focus = $("focus"), tc = $("vfTc"); let t0 = 0, raf = 0;
-  const tick = t => { const s = Math.floor((t-t0)/1000); tc.textContent = "00:" + String(Math.floor(s/60)).padStart(2,"0") + ":" + String(s%60).padStart(2,"0"); raf = requestAnimationFrame(tick); };
-  const move = e => { const r = vf.getBoundingClientRect(); focus.style.left = ((e.clientX-r.left)/r.width*100)+"%"; focus.style.top = ((e.clientY-r.top)/r.height*100)+"%"; };
-  vf.addEventListener("pointermove", e=>{ if (e.pointerType === "mouse") move(e); });
-  vf.addEventListener("pointerdown", e=>{ move(e); focus.classList.add("tap"); setTimeout(()=>focus.classList.remove("tap"),180); });
-  new IntersectionObserver(([e])=>{
-    if (e.isIntersecting && !reduce){ vf.classList.add("live"); t0 = performance.now(); raf = requestAnimationFrame(tick); }
-    else { vf.classList.remove("live"); cancelAnimationFrame(raf); }
-  },{threshold:.4}).observe(vf);
-})();
-
-/* Anfrage-Baukasten */
-const state = { what:new Set(["Reels jeden Monat"]), pkg:"4 Reels", start:"", budget:"" };
-document.querySelectorAll(".builder .seg").forEach(g=>g.querySelectorAll("button").forEach(b=>b.addEventListener("click",()=>{
-  if (g.classList.contains("multi")){
-    const on = b.getAttribute("aria-pressed") !== "true"; b.setAttribute("aria-pressed", on);
-    on ? state.what.add(b.textContent) : state.what.delete(b.textContent);
-  } else { g.querySelectorAll("button").forEach(x=>x.setAttribute("aria-pressed", x===b)); state[g.dataset.k] = b.textContent; }
-  buildMsg();
-})));
-function pick(label){
-  document.querySelectorAll('[data-k=what] button').forEach(b=>b.setAttribute("aria-pressed", b.textContent===label));
-  state.what = new Set([label]); buildMsg();
-}
-document.querySelectorAll("[data-pick]").forEach(a=>a.addEventListener("click",()=>pick(a.dataset.pick)));
-["bBiz","bName","bAddr","bMail","bOther","bIdea"].forEach(id=>$(id).addEventListener("input", buildMsg));
-let tried = false;
+/* Anfrage */
 const MAIL = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+let tried = false;
+const FIELDS = [["bName","Name"],["bMail","E-Mail"],["bTel","Telefon"],["bText","worum es geht"],["bBudget","Budget"]];
 function missingFields(){
-  const v = id => $(id).value.trim(), W = state.what, m = [];
-  if (!W.size) m.push(["lWhat","Leistung"]);
-  if (W.has("Reels jeden Monat") && !state.pkg) m.push(["lPkg","Anzahl Reels"]);
-  if (W.has("Etwas anderes") && !v("bOther")) m.push(["bOther","was genau"]);
-  if (!v("bBiz")) m.push(["bBiz","Unternehmen"]);
-  if (!v("bName")) m.push(["bName","Name"]);
-  if (v("bAddr").length < 8) m.push(["bAddr","Adresse"]);
-  if (!MAIL.test(v("bMail"))) m.push(["bMail", v("bMail") ? "gültige E-Mail" : "E-Mail"]);
-  if (!state.start) m.push(["lStart","Start"]);
-  if (!state.budget) m.push(["lBud","Budget"]);
-  return m;
+  const v = id => $(id).value.trim();
+  return FIELDS.filter(([id])=>{
+    if (id==="bMail") return !MAIL.test(v(id));
+    if (id==="bTel") return v(id).replace(/\D/g,"").length < 6;
+    return !v(id);
+  });
 }
-function markInvalid(miss){
-  const ids = new Set(miss.map(x=>x[0]));
-  ["bOther","bBiz","bName","bAddr","bMail"].forEach(id=>{ $(id).classList.toggle("invalid", ids.has(id)); $(id).setAttribute("aria-invalid", ids.has(id)); });
-  ["lWhat","lPkg","lStart","lBud"].forEach(id=>$(id).classList.toggle("invalid", ids.has(id)));
+function update(){
+  const v = id => $(id).value.trim(), miss = missingFields();
+  const m = ["Hallo Tobias, ich habe eine Anfrage.", "", "Name: " + v("bName"), "E-Mail: " + v("bMail"), "Telefon: " + v("bTel"), "Budget pro Monat: " + v("bBudget"), "", v("bText")].join("\n");
+  $("sendWa").href = WA + encodeURIComponent(m);
+  $("sendWa").setAttribute("aria-disabled", miss.length ? "true" : "false");
+  $("missing").textContent = tried && miss.length ? "Bitte noch ausfüllen: " + miss.map(x=>x[1]).join(", ") + "." : "";
+  if (tried) FIELDS.forEach(([id])=>{ const bad = miss.some(x=>x[0]===id); $(id).classList.toggle("invalid", bad); $(id).setAttribute("aria-invalid", bad); });
 }
+FIELDS.forEach(([id])=>{ $(id).addEventListener("input", update); $(id).addEventListener("change", update); });
 $("sendWa").addEventListener("click", e=>{
   const miss = missingFields();
-  if (!miss.length && window.umami) umami.track("WhatsApp-Anfrage", {leistung:[...state.what].join(", "), budget:state.budget});
   if (miss.length){
-    e.preventDefault(); tried = true; markInvalid(miss);
+    e.preventDefault(); tried = true; update();
     const first = $(miss[0][0]); first.scrollIntoView({behavior: reduce ? "auto" : "smooth", block:"center"});
-    if (first.tagName === "INPUT") setTimeout(()=>first.focus({preventScroll:true}), 350);
+    setTimeout(()=>first.focus({preventScroll:true}), 350);
     $("missing").classList.add("shake"); setTimeout(()=>$("missing").classList.remove("shake"), 400);
-  }
+  } else if (window.umami) umami.track("WhatsApp-Anfrage", {budget: $("bBudget").value});
 });
-function buildMsg(){
-  const v = id => $(id).value.trim();
-  const W = state.what, reels = W.has("Reels jeden Monat");
-  $("pkgWrap").hidden = !reels;
-  $("otherWrap").hidden = !W.has("Etwas anderes");
-  const parts = [...W].map(x=>{
-    if (x === "Reels jeden Monat") return "Reel-Abo (" + state.pkg + (state.pkg.includes("Reels") ? " pro Monat" : "") + ")";
-    if (x === "Etwas anderes") return "Etwas anderes" + (v("bOther") ? ": " + v("bOther") : "");
-    return x;
-  });
-  const leistung = parts.length ? parts.join(", ") : "…";
-  const lines = [
-    "Hallo Tobias, ich möchte ein Angebot.",
-    "",
-    "Leistung: " + leistung,
-    "Unternehmen: " + (v("bBiz") || "…"),
-    "Ansprechperson: " + (v("bName") || "…"),
-    "Adresse: " + (v("bAddr") || "…"),
-    "E-Mail: " + (v("bMail") || "…"),
-    "Start: " + (state.start || "…"),
-    "Budget: " + (state.budget || "…")
-  ];
-  if (reels && business.trim()) lines.push("Idee aus dem Monatsplan: " + ideasFor(business)[active][0]);
-  if (v("bIdea")) lines.push("Meine Idee: " + v("bIdea"));
-  const m = lines.join("\n");
-  $("preview").textContent = m;
-  $("sendWa").href = WA + encodeURIComponent(m);
-  const miss = missingFields();
-  $("missing").textContent = miss.length ? "Bitte noch ausfüllen: " + miss.map(x=>x[1]).join(", ") + "." : "Alles drin für dein Angebot.";
-  $("missing").classList.toggle("ok", !miss.length);
-  $("sendWa").setAttribute("aria-disabled", miss.length ? "true" : "false");
-  if (tried) markInvalid(miss);
-
-}
-buildMsg();
+update();
 
 /* Einblenden und Leiste */
 const io = new IntersectionObserver(es=>es.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add("in"); io.unobserve(e.target);} }),{threshold:.1});
