@@ -249,11 +249,22 @@ h2{font:600 clamp(2rem,4.2vw,3.2rem)/1.02 var(--display);letter-spacing:-.01em;m
 .fact:hover .lbl,.fact.open .lbl,.fact:focus-visible .lbl{color:var(--blue)}
 .fact:hover .more,.fact.open .more,.fact:focus-visible .more{max-height:8em;opacity:.85}
 .fact-hint{margin:-16px 0 0;font-size:.86rem;color:var(--muted)}
-.me-day{display:grid;grid-template-columns:auto 1fr;gap:40px;align-items:center;text-align:left;max-width:760px;width:100%;margin-top:24px;background:var(--card);border:1px solid var(--line);border-radius:var(--r-lg);padding:28px}
-.me-day .phone{width:220px}
-.me-day h3{font:600 1.8rem/1.1 var(--display);margin:0 0 10px}
-.me-day p{color:var(--ink-2);margin:0}
-@media (max-width:760px){.facts2{grid-template-columns:1fr}.fact{min-height:0}.me-day{grid-template-columns:1fr;justify-items:center;text-align:center}}
+.me-day{display:grid;grid-template-columns:auto 1fr;gap:48px;align-items:center;text-align:left;max-width:960px;width:100%;margin-top:32px;background:var(--ink);color:var(--paper);border:0;border-radius:var(--r-lg);padding:40px}
+.me-day .phone{width:300px;background:#000;box-shadow:0 30px 60px -20px rgba(0,0,0,.6)}
+.me-day .eyebrow{color:var(--blue)}
+.me-day h3{font:600 clamp(1.7rem,3vw,2.3rem)/1.08 var(--display);margin:0 0 10px;color:var(--paper)}
+.me-day-text>p{color:rgba(239,231,216,.7);margin:0 0 20px}
+.chapters{list-style:none;margin:0;padding:0;display:grid;gap:6px}
+.chapters button{all:unset;box-sizing:border-box;cursor:pointer;width:100%;display:grid;grid-template-columns:64px 1fr;align-items:center;gap:12px;padding:12px 14px;border-radius:12px;position:relative;overflow:hidden;transition:background-color .2s var(--ease),transform .2s var(--ease)}
+.chapters button:hover{background:rgba(239,231,216,.08);transform:translateX(4px)}
+.chapters time{font:600 1.05rem var(--display);color:var(--blue);font-variant-numeric:tabular-nums}
+.chapters span{font-weight:500}
+.chapters i{position:absolute;left:0;bottom:0;height:2px;width:0;background:var(--blue)}
+.chapters button.on{background:rgba(156,203,234,.14)}
+.chapters button.on span{color:#fff}
+.chapters button:focus-visible{outline:2px solid var(--blue);outline-offset:2px}
+@media (max-width:760px){.me-day{grid-template-columns:1fr;justify-items:center;padding:28px 20px;gap:28px}.me-day .phone{width:min(280px,78vw)}.me-day-text{width:100%}}
+@media (max-width:760px){.facts2{grid-template-columns:1fr}.fact{min-height:0}}
 /* Über mich */
 .viewfinder{position:relative;width:min(400px,84vw);aspect-ratio:4/5;border-radius:var(--r-lg);overflow:hidden;background:var(--ink);cursor:crosshair;touch-action:manipulation}
 .viewfinder img{width:100%;height:100%;object-fit:cover;transform:scale(1.02);transition:transform .6s var(--ease)}
@@ -500,10 +511,22 @@ footer a{color:var(--ink-2);display:inline-block;padding:12px 4px}
       <p class="fact-hint reveal">Tippe auf eine Karte für mehr</p>
       <div class="me-day reveal">
         <div class="phone"><div class="screen day">
-          <video id="dayVid" src="media/tag.mp4" poster="media/tag.jpg" playsinline preload="none" aria-label="Reel: ein Tag bei Tobias"></video>
+          <video id="dayVid" src="media/tag.mp4" poster="media/tag.jpg" playsinline preload="metadata" aria-label="Reel: ein Tag bei Tobias"></video>
           <button class="play" id="dayPlay" aria-label="Reel abspielen: ein Tag bei mir"><i><svg viewBox="0 0 24 24"><use href="#i-play"/></svg></i></button>
         </div></div>
-        <div class="me-day-text"><h3>Ein Tag bei mir</h3><p>Vormittags in der Bank, danach Agentur bis spät und abends ins Gym. So sieht ein normaler Mittwoch aus.</p></div>
+        <div class="me-day-text">
+          <p class="eyebrow">Ein Tag bei mir</p>
+          <h3>Bank, Agentur, Sport. Ein ganz normaler Mittwoch</h3>
+          <p>Tippe auf eine Uhrzeit, um direkt dorthin zu springen.</p>
+          <ol class="chapters" id="chapters">
+            <li><button type="button" data-t="2.1"><time>06:05</time><span>Aufstehen</span><i></i></button></li>
+            <li><button type="button" data-t="4.2"><time>06:37</time><span>Training zu Hause</span><i></i></button></li>
+            <li><button type="button" data-t="16.1"><time>07:21</time><span>Ab in die Bank</span><i></i></button></li>
+            <li><button type="button" data-t="25.2"><time>16:00</time><span>Agentur</span><i></i></button></li>
+            <li><button type="button" data-t="32.8"><time>21:16</time><span>Gym</span><i></i></button></li>
+            <li><button type="button" data-t="42.6"><time>23:08</time><span>Letzte Edits</span><i></i></button></li>
+          </ol>
+        </div>
       </div>
     </div>
   </section>
@@ -601,8 +624,14 @@ else figs.forEach(f=>{ if (f.dataset.pos==="c") f.querySelector("video").control
     if (e.isIntersecting && !reduce){ vf.classList.add("live"); t0 = performance.now(); raf = requestAnimationFrame(tick); }
     else { vf.classList.remove("live"); cancelAnimationFrame(raf); }
   },{threshold:.4}).observe(vf);
-  const dv = $("dayVid");
-  $("dayPlay").addEventListener("click", e=>{ document.querySelectorAll("video").forEach(o=>o!==dv && o.pause()); dv.controls = true; dv.play().catch(()=>{}); e.currentTarget.remove(); });
+  const dv = $("dayVid"), chBtns = [...document.querySelectorAll("#chapters button")], times = chBtns.map(b=>+b.dataset.t);
+  const startDay = t => { document.querySelectorAll("video").forEach(o=>o!==dv && o.pause()); dv.controls = true; const pb = $("dayPlay"); if (pb) pb.remove(); if (t != null) dv.currentTime = t; dv.play().catch(()=>{}); };
+  $("dayPlay").addEventListener("click", ()=>startDay(null));
+  chBtns.forEach(b=>b.addEventListener("click", ()=>startDay(+b.dataset.t)));
+  dv.addEventListener("timeupdate", ()=>{
+    const t = dv.currentTime; let k = -1; times.forEach((x,i)=>{ if (t >= x) k = i; });
+    chBtns.forEach((b,i)=>{ b.classList.toggle("on", i===k); const end = times[i+1] ?? dv.duration; b.querySelector("i").style.width = i===k ? Math.min(100,(t-times[i])/(end-times[i])*100)+"%" : (i<k ? "0" : "0"); });
+  });
 })();
 
 /* Ablauf: Antippen am Handy */
