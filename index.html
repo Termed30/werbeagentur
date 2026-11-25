@@ -77,11 +77,20 @@ h1 .line{display:inline-block}
 .rot-w{display:inline-block;transition:transform .35s var(--ease),opacity .35s var(--ease)}
 .rot-w.out{transform:translateY(-.5em);opacity:0}
 .rot-w.in{transform:translateY(.5em);opacity:0;transition:none}
-.fan{position:relative;width:100%;max-width:1000px;height:520px}
+.fan{position:relative;width:100%;max-width:1000px;height:580px;padding-top:30px}
+.fan-track{top:30px!important}
 .fan-track{position:absolute;inset:0}
 .fphone{position:absolute;left:50%;top:0;margin:0;width:250px;transition:transform .6s var(--ease),opacity .6s var(--ease),filter .6s var(--ease);cursor:pointer;will-change:transform}
 .fphone .phone{width:100%}
-.fphone[data-off="0"]{transform:translateX(-50%) scale(1);z-index:5;cursor:default}
+.fphone[data-off="0"]{transform:translateX(-50%) scale(1.14);z-index:5;cursor:default}
+.fphone[data-off="0"] .phone{box-shadow:0 0 0 3px var(--blue),0 34px 60px -18px rgba(23,22,26,.5)}
+.fphone .live{position:absolute;top:14px;left:14px;z-index:3;display:none;align-items:center;gap:6px;background:rgba(0,0,0,.55);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);color:#fff;font:600 .72rem var(--body);padding:5px 9px;border-radius:999px}
+.fphone[data-off="0"] .live{display:inline-flex}
+.live .eq{display:inline-flex;align-items:flex-end;gap:2px;height:10px}
+.live .eq i{width:2px;background:var(--blue);height:30%;border-radius:1px}
+.fphone.playing .live .eq i{animation:eq .9s ease-in-out infinite}
+.fphone.playing .live .eq i:nth-child(2){animation-delay:-.3s}.fphone.playing .live .eq i:nth-child(3){animation-delay:-.6s}
+@keyframes eq{0%,100%{height:30%}50%{height:100%}}
 .fphone[data-off="-1"]{transform:translateX(-128%) translateY(30px) rotate(-6deg) scale(.82);z-index:4;filter:saturate(.75) brightness(.92)}
 .fphone[data-off="1"]{transform:translateX(28%) translateY(30px) rotate(6deg) scale(.82);z-index:4;filter:saturate(.75) brightness(.92)}
 .fphone[data-off="-2"]{transform:translateX(-190%) translateY(70px) rotate(-11deg) scale(.66);z-index:3;filter:saturate(.6) brightness(.85);opacity:.9}
@@ -113,7 +122,7 @@ h1 .line{display:inline-block}
 .fan-dots{display:flex;gap:8px}
 .fan-dots button{width:10px;height:10px;border-radius:5px;border:0;background:var(--line-2);cursor:pointer;padding:0;transition:width .3s var(--ease),background-color .3s var(--ease)}
 .fan-dots button[aria-selected="true"]{width:28px;background:var(--blue-ink)}
-@media (max-width:640px){.fan{height:430px}.fphone{width:210px}.fphone[data-off="-1"]{transform:translateX(-112%) translateY(30px) rotate(-6deg) scale(.78)}.fphone[data-off="1"]{transform:translateX(12%) translateY(30px) rotate(6deg) scale(.78)}.fphone[data-off="-2"],.fphone[data-off="2"]{opacity:0;pointer-events:none}.fan-nav{top:auto;bottom:-6px;width:44px;height:44px}}
+@media (max-width:640px){.fan{height:480px}.fphone[data-off="0"]{transform:translateX(-50%) scale(1.06)}.fphone{width:210px}.fphone[data-off="-1"]{transform:translateX(-112%) translateY(30px) rotate(-6deg) scale(.78)}.fphone[data-off="1"]{transform:translateX(12%) translateY(30px) rotate(6deg) scale(.78)}.fphone[data-off="-2"],.fphone[data-off="2"]{opacity:0;pointer-events:none}.fan-nav{top:auto;bottom:-6px;width:44px;height:44px}}
 .kicker{display:inline-flex;align-items:center;gap:8px;font:500 .8rem var(--mono);color:var(--blue-ink);background:var(--blue-soft);padding:6px 12px;border-radius:999px;margin-bottom:24px}
 .kicker i{width:7px;height:7px;border-radius:50%;background:var(--blue-ink)}
 h1{font:600 clamp(2.8rem,6.2vw,5.2rem)/.98 var(--display);letter-spacing:-.015em;margin:0 0 24px}
@@ -282,7 +291,7 @@ h2{font:600 clamp(2rem,4.2vw,3.2rem)/1.02 var(--display);letter-spacing:-.01em;m
 .steps li:hover .ill,.steps li.on .ill{color:var(--paper);transform:rotate(-6deg) scale(1.1)}
 .offer .ill{color:var(--ink);transition:transform .3s var(--ease)}
 .offer:hover .ill{transform:translateY(-3px) rotate(-4deg)}
-@media (prefers-reduced-motion:reduce){.ill *{stroke-dashoffset:0;transition:none}}
+@media (prefers-reduced-motion:reduce){.fphone.playing .live .eq i{animation:none;height:70%}.ill *{stroke-dashoffset:0;transition:none}}
 /* Sucher-Ecken als Hintergrund-Detail */
 .frame-deco{position:relative}
 .frame-deco::before,.frame-deco::after{content:"";position:absolute;width:28px;height:28px;border:2px solid var(--line-2);pointer-events:none}
@@ -655,6 +664,7 @@ function syncPlayer(){
   if (!seeking){ $("plSeek").value = d ? Math.round(t/d*1000) : 0; }
   $("plSeek").style.setProperty("--p", (d ? t/d*100 : 0) + "%");
   $("plTime").textContent = fmt(t) + " / " + fmt(d);
+  const fig = pv.closest(".fphone"); if (fig){ fig.classList.toggle("playing", !pv.paused); const lt = fig.querySelector(".lt"); if (lt) lt.textContent = pv.paused ? "Pausiert" : "Läuft gerade"; }
   $("plIcon").setAttribute("d", pv.paused ? "M7 4l13 8-13 8z" : "M8 5v14M16 5v14");
   $("plPlay").setAttribute("aria-label", pv.paused ? "Abspielen" : "Pause");
   $("plMuteIcon").setAttribute("href", pv.muted ? "#i-mute" : "#i-vol");
@@ -683,7 +693,7 @@ const FAN = [
 const track = $("fanTrack"), dots = $("fanDots"), fan = $("fan"); let cur = 0, fanVisible = false;
 const figs = FAN.map((v,i)=>{
   const f = document.createElement("figure"); f.className = "fphone";
-  f.innerHTML = `<div class="phone"><div class="screen"><video muted loop playsinline preload="${i===0?"metadata":"none"}"></video><span class="tag"></span></div></div>`;
+  f.innerHTML = `<div class="phone"><div class="screen"><video muted loop playsinline preload="${i===0?"metadata":"none"}"></video><span class="live"><span class="eq"><i></i><i></i><i></i></span><span class="lt">Läuft gerade</span></span><span class="tag"></span></div></div>`;
   const vid = f.querySelector("video"); vid.src = v.src; vid.poster = v.poster; f.querySelector(".tag").textContent = v.title;
   f.addEventListener("click", ()=>{ if (+f.dataset.idx !== cur) go(+f.dataset.idx); });
   f.dataset.idx = i; track.appendChild(f);
