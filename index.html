@@ -423,11 +423,11 @@ footer a{color:var(--ink-2);display:inline-block;padding:12px 4px}
       </div>
     </div>
     <div class="fan reveal" id="fan">
-      <figure class="fphone" data-pos="l"><div class="phone"><div class="screen"><video src="media/tag.mp4" poster="media/tag.jpg" muted loop playsinline preload="metadata"></video></div></div><figcaption>Ein Tag bei mir</figcaption></figure>
+      
       <figure class="fphone" data-pos="c"><div class="phone"><div class="screen"><video src="media/hero.mp4" poster="media/biomassekraftwerk.jpg" muted loop playsinline preload="metadata"></video></div></div><figcaption>Capex Green: Biomassekraftwerk</figcaption></figure>
       <figure class="fphone" data-pos="r"><div class="phone"><div class="screen"><video src="media/miscanthus.mp4" poster="media/miscanthus.jpg" muted loop playsinline preload="metadata"></video></div></div><figcaption>Capex Green: Miscanthus</figcaption></figure>
     </div>
-    <p class="fan-hint">Tippe auf ein Video links oder rechts, um es nach vorne zu holen. Mit der Leiste im Video spulst du vor und zurück und schaltest den Ton ein.</p>
+    <p class="fan-hint">Tippe auf das Video rechts, um es nach vorne zu holen. Mit der Leiste im Video spulst du vor und zurück und schaltest den Ton ein.</p>
   </div>
 
   <section id="arbeiten">
@@ -510,25 +510,6 @@ footer a{color:var(--ink-2);display:inline-block;padding:12px 4px}
         <button class="fact" type="button"><b>Jeden Tag</b><span class="lbl">Sport, auch nach einem harten Arbeitstag</span><span class="more">Sei es Fußball, Gym, Laufen oder Skifahren. Diese Ausdauer bringe ich auch zu dir mit, wenn wir drehen.</span></button>
       </div>
       <p class="fact-hint reveal">Tippe auf eine Karte für mehr</p>
-      <div class="me-day reveal">
-        <div class="phone"><div class="screen day">
-          <video id="dayVid" src="media/tag.mp4" poster="media/tag.jpg" playsinline preload="metadata" aria-label="Reel: ein Tag bei Tobias"></video>
-          <button class="play" id="dayPlay" aria-label="Reel abspielen: ein Tag bei mir"><i><svg viewBox="0 0 24 24"><use href="#i-play"/></svg></i></button>
-        </div></div>
-        <div class="me-day-text">
-          <p class="eyebrow">Ein Tag bei mir</p>
-          <h3>Bank, Agentur, Sport. Ein ganz normaler Mittwoch</h3>
-          <p>Tippe auf eine Uhrzeit, um direkt dorthin zu springen.</p>
-          <ol class="chapters" id="chapters">
-            <li><button type="button" data-t="2.1"><time>06:05</time><span>Aufstehen</span><i></i></button></li>
-            <li><button type="button" data-t="4.2"><time>06:37</time><span>Training zu Hause</span><i></i></button></li>
-            <li><button type="button" data-t="16.1"><time>07:21</time><span>Ab in die Bank</span><i></i></button></li>
-            <li><button type="button" data-t="25.2"><time>16:00</time><span>Agentur</span><i></i></button></li>
-            <li><button type="button" data-t="32.8"><time>21:16</time><span>Gym</span><i></i></button></li>
-            <li><button type="button" data-t="42.6"><time>23:08</time><span>Letzte Edits</span><i></i></button></li>
-          </ol>
-        </div>
-      </div>
     </div>
   </section>
 
@@ -614,7 +595,7 @@ else figs.forEach(f=>{ if (f.dataset.pos==="c") f.querySelector("video").control
   $("vids").appendChild(f);
 });
 
-/* Über mich: Sucher und Reel */
+/* Über mich: Sucher */
 (function(){
   const vf = $("vf"), focus = $("focus"), tc = $("vfTc"); let t0 = 0, raf = 0;
   const tick = t => { const s = Math.floor((t-t0)/1000); tc.textContent = "00:" + String(Math.floor(s/60)).padStart(2,"0") + ":" + String(s%60).padStart(2,"0"); raf = requestAnimationFrame(tick); };
@@ -625,14 +606,6 @@ else figs.forEach(f=>{ if (f.dataset.pos==="c") f.querySelector("video").control
     if (e.isIntersecting && !reduce){ vf.classList.add("live"); t0 = performance.now(); raf = requestAnimationFrame(tick); }
     else { vf.classList.remove("live"); cancelAnimationFrame(raf); }
   },{threshold:.4}).observe(vf);
-  const dv = $("dayVid"), chBtns = [...document.querySelectorAll("#chapters button")], times = chBtns.map(b=>+b.dataset.t);
-  const startDay = t => { document.querySelectorAll("video").forEach(o=>o!==dv && o.pause()); dv.controls = true; const pb = $("dayPlay"); if (pb) pb.remove(); if (t != null) dv.currentTime = t; dv.play().catch(()=>{}); };
-  $("dayPlay").addEventListener("click", ()=>startDay(null));
-  chBtns.forEach(b=>b.addEventListener("click", ()=>startDay(+b.dataset.t)));
-  dv.addEventListener("timeupdate", ()=>{
-    const t = dv.currentTime; let k = -1; times.forEach((x,i)=>{ if (t >= x) k = i; });
-    chBtns.forEach((b,i)=>{ b.classList.toggle("on", i===k); const end = times[i+1] ?? dv.duration; b.querySelector("i").style.width = i===k ? Math.min(100,(t-times[i])/(end-times[i])*100)+"%" : (i<k ? "0" : "0"); });
-  });
 })();
 
 /* Ablauf: Antippen am Handy */
