@@ -248,6 +248,7 @@ h2{font:600 clamp(2rem,4.2vw,3.2rem)/1.02 var(--display);letter-spacing:-.01em;m
 .fact:hover,.fact.open,.fact:focus-visible{transform:translateY(-8px) scale(1.03);background:var(--ink);color:var(--paper);box-shadow:0 24px 40px -20px rgba(23,22,26,.45)}
 .fact:hover .lbl,.fact.open .lbl,.fact:focus-visible .lbl{color:var(--blue)}
 .fact:hover .more,.fact.open .more,.fact:focus-visible .more{max-height:8em;opacity:.85}
+@media (max-width:520px){.vf-ui .meta .loc{display:none}.vf-ui .meta{justify-content:center}}
 .fact-hint{margin:-16px 0 0;font-size:.86rem;color:var(--muted)}
 .me-day{display:grid;grid-template-columns:auto 1fr;gap:48px;align-items:center;text-align:left;max-width:960px;width:100%;margin-top:32px;background:var(--ink);color:var(--paper);border:0;border-radius:var(--r-lg);padding:40px}
 .me-day .phone{width:300px;background:#000;box-shadow:0 30px 60px -20px rgba(0,0,0,.6)}
@@ -500,7 +501,7 @@ footer a{color:var(--ink-2);display:inline-block;padding:12px 4px}
       <div class="viewfinder me-photo reveal" id="vf" role="img" aria-label="Porträt von Tobias Sereinig">
         <img src="media/tobias.jpg" alt="" width="800" height="1000" loading="lazy">
         <span class="focus" id="focus"></span>
-        <div class="vf-ui"><span class="c tl"></span><span class="c tr"></span><span class="c bl"></span><span class="c br"></span><span class="r"><i></i>REC</span><span class="tc" id="vfTc">00:00:00</span><span class="meta"><span>Tobias Sereinig</span><span>St. Jakob im Rosental</span></span></div>
+        <div class="vf-ui"><span class="c tl"></span><span class="c tr"></span><span class="c bl"></span><span class="c br"></span><span class="r"><i></i>REC</span><span class="tc" id="vfTc">00:00:00</span><span class="meta"><span>Tobias Sereinig</span><span class="loc">St. Jakob im Rosental</span></span></div>
       </div>
       <p class="me-lead reveal">Ich bin Jungunternehmer aus <span style="white-space:nowrap">St.&nbsp;Jakob im Rosental</span> und setze um, was ich mir vornehme.</p>
       <div class="facts2 reveal">
