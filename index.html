@@ -411,12 +411,11 @@ footer a{color:var(--ink-2);display:inline-block;padding:12px 4px}
       </div>
     </div>
     <div class="fan reveal" id="fan">
-      <figure class="fphone" data-pos="l"><div class="phone"><div class="screen"><video src="media/tag.mp4" poster="media/tag.jpg" muted loop playsinline preload="none"></video></div></div><figcaption>Ein Tag bei mir</figcaption></figure>
+      <figure class="fphone" data-pos="l"><div class="phone"><div class="screen"><video src="media/tag.mp4" poster="media/tag.jpg" muted loop playsinline preload="metadata"></video></div></div><figcaption>Ein Tag bei mir</figcaption></figure>
       <figure class="fphone" data-pos="c"><div class="phone"><div class="screen"><video src="media/hero.mp4" poster="media/biomassekraftwerk.jpg" muted loop playsinline preload="metadata"></video></div></div><figcaption>Capex Green: Biomassekraftwerk</figcaption></figure>
-      <figure class="fphone" data-pos="r"><div class="phone"><div class="screen"><video src="media/miscanthus.mp4" poster="media/miscanthus.jpg" muted loop playsinline preload="none"></video></div></div><figcaption>Capex Green: Miscanthus</figcaption></figure>
-      <button class="sound" id="soundBtn" aria-label="Ton einschalten"><svg><use href="#i-mute"/></svg></button>
+      <figure class="fphone" data-pos="r"><div class="phone"><div class="screen"><video src="media/miscanthus.mp4" poster="media/miscanthus.jpg" muted loop playsinline preload="metadata"></video></div></div><figcaption>Capex Green: Miscanthus</figcaption></figure>
     </div>
-    <p class="fan-hint">Tippe auf ein Video links oder rechts, um es nach vorne zu holen</p>
+    <p class="fan-hint">Tippe auf ein Video links oder rechts, um es nach vorne zu holen. Mit der Leiste im Video spulst du vor und zurück und schaltest den Ton ein.</p>
   </div>
 
   <section id="arbeiten">
@@ -490,13 +489,13 @@ footer a{color:var(--ink-2);display:inline-block;padding:12px 4px}
       <div class="viewfinder me-photo reveal" id="vf" role="img" aria-label="Porträt von Tobias Sereinig">
         <img src="media/tobias.jpg" alt="" width="800" height="1000" loading="lazy">
         <span class="focus" id="focus"></span>
-        <div class="vf-ui"><span class="c tl"></span><span class="c tr"></span><span class="c bl"></span><span class="c br"></span><span class="r"><i></i>REC</span><span class="tc" id="vfTc">00:00:00</span><span class="meta"><span>Tobias Sereinig</span><span>Rosenbach</span></span></div>
+        <div class="vf-ui"><span class="c tl"></span><span class="c tr"></span><span class="c bl"></span><span class="c br"></span><span class="r"><i></i>REC</span><span class="tc" id="vfTc">00:00:00</span><span class="meta"><span>Tobias Sereinig</span><span>St. Jakob im Rosental</span></span></div>
       </div>
-      <p class="me-lead reveal">Ich bin Jungunternehmer aus Rosenbach und setze um, was ich mir vornehme.</p>
+      <p class="me-lead reveal">Ich bin Jungunternehmer aus St. Jakob im Rosental und setze um, was ich mir vornehme.</p>
       <div class="facts2 reveal">
         <button class="fact" type="button"><b><span class="count" data-to="14">14</span> Tage</b><span class="lbl">von der Idee bis zur Selbstständigkeit</span><span class="more">So lange hat es gedauert, bis ich meinen ersten Arbeitstag als Selbstständiger hatte.</span></button>
         <button class="fact" type="button"><b><span class="count" data-to="4">4</span> Jahre</b><span class="lbl">in Amerika</span><span class="more">Dort habe ich halbprofessionell Fußball gespielt. Die Disziplin von damals habe ich mitgenommen.</span></button>
-        <button class="fact" type="button"><b>5:00</b><span class="lbl">Uhr geht's ins Gym</span><span class="more">Danach an die Arbeit. Wenn ich bei dir drehe, kommen wir ohne Umwege zu Videos, die zu deinem Unternehmen passen.</span></button>
+        <button class="fact" type="button"><b>Jeden Tag</b><span class="lbl">Sport, auch nach einem harten Arbeitstag</span><span class="more">Sei es Fußball, Gym, Laufen oder Skifahren. Diese Ausdauer bringe ich auch zu dir mit, wenn wir drehen.</span></button>
       </div>
       <p class="fact-hint reveal">Tippe auf eine Karte für mehr</p>
       <div class="me-day reveal">
@@ -561,22 +560,18 @@ const nav = $("nav");
 addEventListener("scroll", ()=>nav.classList.toggle("scrolled", scrollY > 8), {passive:true});
 
 /* Video-Fächer */
-const fan = $("fan"), sb = $("soundBtn"), figs = [...fan.querySelectorAll(".fphone")];
-let soundOn = false;
-const centerVid = () => fan.querySelector('[data-pos="c"] video');
+const fan = $("fan"), figs = [...fan.querySelectorAll(".fphone")];
 function playCenter(){
-  figs.forEach(f=>{ const v = f.querySelector("video"); if (f.dataset.pos === "c"){ v.muted = !soundOn; v.play().catch(()=>{}); } else { v.pause(); v.muted = true; } });
+  figs.forEach(f=>{ const v = f.querySelector("video");
+    if (f.dataset.pos === "c"){ v.controls = true; v.muted = true; v.play().catch(()=>{}); v.addEventListener("canplay", ()=>{ if (f.dataset.pos === "c" && v.paused) v.play().catch(()=>{}); }, {once:true}); }
+    else { v.pause(); v.controls = false; v.muted = true; } });
 }
 figs.forEach(f=>f.addEventListener("click", ()=>{
   const pos = f.dataset.pos; if (pos === "c") return;
   const c = fan.querySelector('[data-pos="c"]'); c.dataset.pos = pos; f.dataset.pos = "c"; playCenter();
 }));
-sb.addEventListener("click", e=>{
-  e.stopPropagation(); soundOn = !soundOn; playCenter();
-  sb.setAttribute("aria-label", soundOn ? "Ton ausschalten" : "Ton einschalten");
-  sb.querySelector("use").setAttribute("href", soundOn ? "#i-vol" : "#i-mute");
-});
 if (!reduce) new IntersectionObserver(([e])=>{ e.isIntersecting ? playCenter() : figs.forEach(f=>f.querySelector("video").pause()); },{threshold:.3}).observe(fan);
+else figs.forEach(f=>{ if (f.dataset.pos==="c") f.querySelector("video").controls = true; });
 
 /* Referenz-Videos */
 [
