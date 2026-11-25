@@ -1,0 +1,725 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Tobias Sereinig · Werbeagentur · Reels und Videos in Kärnten</title>
+<meta name="description" content="Jeden Monat fertige Reels für dein Unternehmen in Kärnten: ein Dreh bei dir vor Ort, Schnitt, Untertitel und Musik inklusive. Ab 359 € pro Monat.">
+<meta name="theme-color" content="#efe7d8">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Tobias Sereinig · Werbeagentur · Reels für dein Unternehmen">
+<meta property="og:description" content="Jeden Monat fertige Reels für dein Unternehmen in Kärnten. Ein Dreh bei dir, Schnitt, Untertitel und Musik inklusive.">
+<meta property="og:image" content="https://termed30.github.io/werbeagentur/media/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="628">
+<meta property="og:url" content="https://termed30.github.io/werbeagentur/">
+<link rel="canonical" href="https://termed30.github.io/werbeagentur/">
+<meta property="og:locale" content="de_AT">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%2317161a'/%3E%3Ccircle cx='16' cy='16' r='6' fill='%239ccbea'/%3E%3C/svg%3E">
+<style>
+:root{
+  --paper:#efe7d8; --paper-2:#e6dbc7; --card:#f8f3e9; --ink:#17161a; --ink-2:#4b463e; --muted:#6a6255;
+  --line:rgba(23,22,26,.12); --line-2:rgba(23,22,26,.24);
+  --blue:#9ccbea; --blue-soft:#d8e9f5; --blue-ink:#1d5a86;
+  --display:"Avenir Next Condensed","Helvetica Neue","Arial Narrow",Arial,sans-serif;
+  --body:-apple-system,BlinkMacSystemFont,"Helvetica Neue","Segoe UI",Arial,sans-serif;
+  --mono:ui-monospace,"SF Mono",Menlo,Consolas,monospace;
+  --ease:cubic-bezier(.2,.7,.2,1);
+  --r-sm:10px; --r-md:16px; --r-lg:24px;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;scroll-padding-top:80px}
+body{margin:0;background:var(--paper);color:var(--ink);font:17px/1.55 var(--body);-webkit-font-smoothing:antialiased}
+a{color:inherit}
+img,video{max-width:100%;display:block}
+.wrap{max-width:1200px;margin:0 auto;padding:0 max(20px,env(safe-area-inset-left))}
+:focus-visible{outline:2px solid var(--blue-ink);outline-offset:3px;border-radius:6px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+
+/* Kopfzeile */
+.nav{position:sticky;top:0;z-index:20;background:rgba(239,231,216,.86);-webkit-backdrop-filter:saturate(1.4) blur(12px);backdrop-filter:saturate(1.4) blur(12px);border-bottom:1px solid transparent;transition:border-color .2s var(--ease)}
+.nav.scrolled{border-bottom-color:var(--line)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:68px;gap:16px}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;font:600 1.15rem/1 var(--display);letter-spacing:.01em}
+.logo-mark{width:28px;height:28px;border-radius:8px;background:var(--ink);display:grid;place-items:center}
+.logo-mark i{width:10px;height:10px;border-radius:50%;background:var(--blue)}
+.logo small{display:block;font:500 .72rem var(--body);color:var(--muted);letter-spacing:0;margin-top:3px}
+.nav nav{display:flex;align-items:center;gap:28px}
+.nav nav a{font-size:.95rem;color:var(--ink-2);text-decoration:none;transition:color .15s var(--ease)}
+.nav nav a:hover{color:var(--ink)}
+.nav nav a.btn{color:var(--paper)}
+.nav nav a.btn:hover{color:#fff}
+@media (max-width:860px){.nav nav a:not(.btn){display:none}}
+
+/* Buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;height:52px;padding:0 24px;border-radius:12px;font:600 1rem var(--body);text-decoration:none;border:1.5px solid var(--ink);cursor:pointer;white-space:nowrap;transition:background-color .15s var(--ease),color .15s var(--ease),border-color .15s var(--ease),transform .1s var(--ease)}
+.btn:active{transform:scale(.98)}
+.btn svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:1.75;flex:none}
+.btn-main{background:var(--ink);color:var(--paper)}
+.btn-main:hover{background:var(--blue-ink);border-color:var(--blue-ink)}
+.btn-ghost{background:transparent;color:var(--ink)}
+.btn-ghost:hover{background:var(--card)}
+.btn-blue{background:var(--blue);border-color:var(--blue);color:var(--ink)}
+.btn-blue:hover{background:#fff;border-color:#fff}
+.btn-sm{height:44px;padding:0 18px;font-size:.92rem;border-radius:10px}
+
+/* Hero */
+.hero{display:grid;grid-template-columns:1.1fr .9fr;gap:64px;align-items:center;padding:56px 0 72px}
+.kicker{display:inline-flex;align-items:center;gap:8px;font:500 .8rem var(--mono);color:var(--blue-ink);background:var(--blue-soft);padding:6px 12px;border-radius:999px;margin-bottom:24px}
+.kicker i{width:7px;height:7px;border-radius:50%;background:var(--blue-ink)}
+h1{font:600 clamp(2.8rem,6.2vw,5.2rem)/.98 var(--display);letter-spacing:-.015em;margin:0 0 24px}
+h1 .hl{white-space:nowrap;position:relative;z-index:0}
+h1 .hl::after{content:"";position:absolute;left:-.04em;right:-.04em;bottom:.08em;height:.26em;background:var(--blue);z-index:-1;border-radius:3px}
+.lead{font-size:1.2rem;line-height:1.5;color:var(--ink-2);max-width:34ch;margin:0 0 32px}
+.cta{display:flex;flex-wrap:wrap;gap:12px}
+.proof{display:flex;align-items:center;gap:14px;margin-top:32px;padding-top:24px;border-top:1px solid var(--line);font-size:.95rem;color:var(--ink-2);max-width:520px}
+.proof b{font:600 2rem/1 var(--display);color:var(--ink);font-variant-numeric:tabular-nums;white-space:nowrap}
+
+.stage{position:relative;display:flex;align-items:center;justify-content:center;gap:24px}
+.phone-wrap{display:grid;justify-items:center;gap:12px}
+.phone-cap{margin:0;font-size:.86rem;color:var(--muted);text-align:center;max-width:320px}
+.phone-cap b{color:var(--ink);font-weight:600}
+.side-stack{display:flex;flex-direction:column;gap:16px;flex:none}
+.phone{position:relative;width:min(320px,74vw);border-radius:40px;flex:none;background:#0d0d0f;padding:10px;box-shadow:0 30px 60px -20px rgba(23,22,26,.45),0 0 0 1px rgba(23,22,26,.08)}
+.phone .screen{position:relative;width:100%;aspect-ratio:9/16;border-radius:31px;overflow:hidden;background:#000}
+.phone video{width:100%;height:100%;object-fit:cover}
+
+.phone .hud{position:absolute;inset:auto 14px 16px 14px;display:flex;justify-content:space-between;align-items:flex-end;gap:8px;z-index:2;color:#fff}
+.phone .tag{font:500 .72rem var(--mono);background:rgba(0,0,0,.45);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);padding:6px 10px;border-radius:8px;line-height:1.3}
+.phone .tag b{display:block;font:600 .9rem var(--body)}
+.sound{position:absolute;top:10px;right:10px;z-index:2;width:44px;height:44px;border-radius:50%;border:0;background:rgba(0,0,0,.45);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);color:#fff;display:grid;place-items:center;cursor:pointer;flex:none}
+.sound svg{width:20px;height:20px;stroke:#fff;fill:none;stroke-width:1.75}
+.rec{position:absolute;top:16px;left:16px;z-index:2;display:flex;align-items:center;gap:6px;font:500 .7rem var(--mono);color:#fff;text-shadow:0 1px 2px rgba(0,0,0,.5)}
+.rec i{width:8px;height:8px;border-radius:50%;background:var(--blue)}
+.side-card{position:relative;background:var(--card);border:1px solid var(--line);border-radius:var(--r-md);padding:14px 16px;box-shadow:0 12px 30px -12px rgba(23,22,26,.25);font-size:.88rem;color:var(--ink-2)}
+.side-card b{display:block;font:600 1.4rem/1.1 var(--display);color:var(--ink)}
+@media (max-width:980px){.hero{grid-template-columns:1fr;gap:48px;padding-top:32px}.stage{flex-direction:column-reverse}.side-stack{flex-direction:row;flex-wrap:wrap;justify-content:center}}
+@media (max-width:520px){.side-stack{display:grid;grid-template-columns:1fr 1fr;gap:10px;width:min(320px,74vw)}.side-card{padding:12px}.side-card b{font-size:1.15rem}}
+
+.hero>*,.case>*,.planner>*,.offers>*,.close>*,.about>*,.builder>*,.f{min-width:0}
+/* Leiste mit Fakten */
+.facts{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.facts div{padding:24px 20px;border-left:1px solid var(--line)}
+.facts div:first-child{border-left:0;padding-left:0}
+.facts b{display:block;font:600 1.8rem/1 var(--display);font-variant-numeric:tabular-nums;margin-bottom:6px}
+.facts span{font-size:.9rem;color:var(--muted)}
+@media (max-width:760px){.facts{grid-template-columns:1fr 1fr}.facts div:nth-child(3){border-left:0;padding-left:0}.facts div:nth-child(n+3){border-top:1px solid var(--line)}}
+
+/* Abschnitte */
+section{padding:96px 0}
+.eyebrow{font:500 .82rem var(--mono);color:var(--blue-ink);margin:0 0 12px}
+h2{font:600 clamp(2rem,4.2vw,3.2rem)/1.02 var(--display);letter-spacing:-.01em;margin:0 0 16px}
+.intro{color:var(--ink-2);font-size:1.08rem;max-width:56ch;margin:0}
+.head{display:flex;justify-content:space-between;align-items:flex-end;gap:32px;margin-bottom:48px;flex-wrap:wrap}
+
+/* Referenz */
+.case{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;align-items:center}
+.case-text p{color:var(--ink-2);margin:0 0 16px}
+.case-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:28px 0}
+.case-stats div{background:var(--card);border:1px solid var(--line);border-radius:var(--r-md);padding:16px}
+.case-stats b{display:block;font:600 1.9rem/1 var(--display);font-variant-numeric:tabular-nums}
+.case-stats span{font-size:.84rem;color:var(--muted)}
+.vids{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.vid{margin:0}
+.vid .box{position:relative;aspect-ratio:9/16;border-radius:var(--r-md);overflow:hidden;background:var(--ink)}
+.vid video{width:100%;height:100%;object-fit:cover}
+.vid .play{position:absolute;inset:0;border:0;background:linear-gradient(transparent 55%,rgba(0,0,0,.45));cursor:pointer;display:flex;align-items:flex-end;justify-content:space-between;padding:16px;color:#fff;text-align:left;font:inherit}
+.vid .play span.t{font:600 1.05rem/1.2 var(--display)}
+.vid .play span.t small{display:block;font:400 .8rem var(--body);opacity:.85;margin-top:2px}
+.vid .play i{width:52px;height:52px;border-radius:50%;background:var(--blue);display:grid;place-items:center;flex:none;transition:transform .15s var(--ease)}
+.vid .play:hover i{transform:scale(1.06)}
+.vid .play svg{width:18px;height:18px;fill:var(--ink);margin-left:3px}
+@media (max-width:900px){.case{grid-template-columns:1fr;gap:40px}}
+
+/* Monatsplan */
+.planner{background:var(--ink);color:var(--paper);border-radius:var(--r-lg);padding:48px;display:grid;grid-template-columns:.85fr 1.15fr;gap:48px;align-items:center}
+.planner h2{color:var(--paper)}
+.planner .intro{color:rgba(239,231,216,.75)}
+.planner .eyebrow{color:var(--blue)}
+.biz{display:grid;gap:8px;margin-top:28px}
+.biz label{font-size:.88rem;color:rgba(239,231,216,.7)}
+.biz input{font:17px var(--body);color:var(--ink);background:var(--paper);border:0;border-radius:12px;height:54px;padding:0 18px;width:100%}
+.biz input:focus{outline:none;box-shadow:0 0 0 3px var(--blue)}
+.chips{display:flex;gap:6px;flex-wrap:wrap;margin-top:4px}
+.chips button{border:1px solid rgba(239,231,216,.25);background:transparent;border-radius:10px;min-height:44px;padding:0 14px;font:500 .85rem var(--body);color:rgba(239,231,216,.85);cursor:pointer;transition:background-color .15s var(--ease),color .15s var(--ease)}
+.chips button:hover,.chips button.on{background:var(--blue);border-color:var(--blue);color:var(--ink)}
+.reels{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.reel{position:relative;aspect-ratio:9/16;border-radius:14px;background:#26252a;border:1px solid rgba(239,231,216,.1);color:var(--paper);padding:12px 10px;display:flex;flex-direction:column;justify-content:space-between;text-align:left;font:inherit;cursor:pointer;transition:transform .2s var(--ease),border-color .2s var(--ease)}
+.reel:hover{transform:translateY(-4px)}
+.reel.on{border-color:var(--blue)}
+.reel .bar{height:3px;border-radius:2px;background:rgba(239,231,216,.2);overflow:hidden}
+.reel .bar i{display:block;height:100%;width:0;background:var(--blue)}
+.reel.on .bar i{animation:fill 4s linear forwards}
+@keyframes fill{to{width:100%}}
+.reel .wk{font:500 .7rem var(--mono);color:rgba(239,231,216,.6);margin-top:8px}
+.reel .ic{flex:1;display:grid;place-items:center}
+.reel .ic svg{width:48%;stroke:var(--blue);fill:none;stroke-width:1.5}
+.reel b{display:block;font:600 1rem/1.15 var(--display)}
+.reel small{display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;font-size:.74rem;line-height:1.35;color:rgba(239,231,216,.7);margin-top:4px;min-height:3em}
+.planner-foot{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-top:20px;flex-wrap:wrap}
+.planner-foot span{font-size:.9rem;color:rgba(239,231,216,.7)}
+@media (max-width:980px){.planner{grid-template-columns:1fr;padding:32px 24px}}
+@media (max-width:560px){.reels{grid-template-columns:repeat(4,46%);overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:6px}.reel{scroll-snap-align:start}}
+
+/* Ablauf */
+.steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:16px;counter-reset:s}
+.steps li{background:var(--card);border:1px solid var(--line);border-radius:var(--r-md);padding:24px;position:relative}
+.steps .n{font:500 .78rem var(--mono);color:var(--blue-ink)}
+.steps h3{font:600 1.35rem/1.15 var(--display);margin:12px 0 8px}
+.steps p{margin:0;color:var(--ink-2);font-size:.97rem}
+@media (max-width:980px){.steps{grid-template-columns:1fr 1fr}}
+@media (max-width:560px){.steps{grid-template-columns:1fr}}
+
+/* Leistungen und Preis */
+.offers{display:grid;grid-template-columns:1.25fr 1fr 1fr;gap:16px}
+@media (max-width:1100px){.offers{grid-template-columns:1fr 1fr}.offer.main{grid-column:1/-1}}
+.offer{border-radius:var(--r-lg);padding:36px;display:flex;flex-direction:column;gap:20px}
+.offer.main{background:var(--card);border:1.5px solid var(--ink)}
+.offer.alt{background:var(--paper-2);border:1px solid var(--line)}
+.offer h3{font:600 1.8rem/1.05 var(--display);margin:0}
+.offer .price{display:flex;align-items:baseline;gap:4px 10px;flex-wrap:wrap}
+.offer .price b{white-space:nowrap}
+.offer .price b{font:600 3.2rem/1 var(--display);font-variant-numeric:tabular-nums}
+.offer .price span{color:var(--muted)}
+.offer ul{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.offer li{display:flex;gap:10px;align-items:flex-start}
+.offer li svg{flex:none;width:20px;height:20px;stroke:var(--blue-ink);fill:none;stroke-width:2;margin-top:2px}
+.pkgs{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.pkgs div{border:1px solid var(--line-2);border-radius:12px;padding:12px;text-align:center}
+.pkgs b{display:block;font:600 1.6rem/1 var(--display)}
+.pkgs span{font-size:.8rem;color:var(--muted)}
+.offer .btn{align-self:flex-start;margin-top:auto}
+.price-note{display:flex;gap:10px;align-items:flex-start;font-size:.9rem;color:var(--ink-2);margin:20px 0 0;max-width:80ch}
+.price-note svg{flex:none;width:18px;height:18px;stroke:var(--blue-ink);fill:none;stroke-width:1.75;margin-top:2px}
+@media (max-width:900px){.offers{grid-template-columns:1fr}.offer{padding:28px 24px}}
+
+/* Über mich */
+.about{display:grid;grid-template-columns:auto 1fr;gap:64px;align-items:center}
+.viewfinder{position:relative;width:min(400px,84vw);aspect-ratio:4/5;border-radius:var(--r-lg);overflow:hidden;background:var(--ink);cursor:crosshair;touch-action:manipulation}
+.viewfinder img{width:100%;height:100%;object-fit:cover;transform:scale(1.02);transition:transform .6s var(--ease)}
+.viewfinder:hover img{transform:scale(1.05)}
+.vf-ui{position:absolute;inset:14px;pointer-events:none;font:500 .7rem var(--mono);color:#fff;text-shadow:0 1px 2px rgba(0,0,0,.45)}
+.vf-ui .c{position:absolute;width:22px;height:22px;border:solid #fff;opacity:.9}
+.vf-ui .tl{top:0;left:0;border-width:2px 0 0 2px}.vf-ui .tr{top:0;right:0;border-width:2px 2px 0 0}
+.vf-ui .bl{bottom:0;left:0;border-width:0 0 2px 2px}.vf-ui .br{bottom:0;right:0;border-width:0 2px 2px 0}
+.vf-ui .r{position:absolute;top:6px;left:32px;display:flex;align-items:center;gap:6px}
+.vf-ui .r i{width:8px;height:8px;border-radius:50%;background:var(--blue);opacity:.35;transition:opacity .2s}
+.viewfinder.live .vf-ui .r i{opacity:1}
+.vf-ui .tc{position:absolute;top:6px;right:32px;font-variant-numeric:tabular-nums}
+.vf-ui .meta{position:absolute;bottom:6px;left:32px;right:32px;display:flex;justify-content:space-between}
+.focus{position:absolute;width:72px;height:72px;margin:-36px 0 0 -36px;border:1.5px solid var(--blue);border-radius:6px;left:50%;top:32%;pointer-events:none;transition:left .25s var(--ease),top .25s var(--ease),transform .25s var(--ease)}
+.focus::after{content:"";position:absolute;left:50%;top:50%;width:6px;height:6px;margin:-3px 0 0 -3px;border-radius:50%;background:var(--blue)}
+.focus.tap{transform:scale(.8)}
+.about-text p{color:var(--ink-2);margin:0 0 16px;max-width:52ch}
+.atabs{display:inline-flex;gap:4px;background:var(--paper-2);border-radius:12px;padding:4px;flex-wrap:wrap;margin:8px 0 16px}
+.atabs button{border:0;background:transparent;font:500 .92rem var(--body);color:var(--ink-2);min-height:44px;padding:0 16px;border-radius:8px;cursor:pointer;transition:background-color .15s var(--ease),color .15s var(--ease)}
+.atabs button[aria-selected="true"]{background:var(--card);color:var(--ink);box-shadow:0 1px 2px rgba(23,22,26,.12)}
+.apanel{min-height:6.4em;transition:opacity .2s var(--ease)}
+.apanel.fade{opacity:0}
+@media (max-width:900px){.about{grid-template-columns:1fr;justify-items:center;text-align:center;gap:40px}.about-text p{margin-left:auto;margin-right:auto}}
+
+/* Fragen */
+.faq{display:grid;grid-template-columns:1fr 1fr;gap:0 48px}
+.faq details{border-top:1px solid var(--line)}
+.faq summary{cursor:pointer;font-weight:600;list-style:none;display:flex;justify-content:space-between;gap:12px;padding:20px 0}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary svg{flex:none;width:20px;height:20px;stroke:var(--ink-2);fill:none;stroke-width:1.5;transition:transform .2s var(--ease)}
+.faq details[open] summary svg{transform:rotate(45deg)}
+.faq p{margin:0 0 20px;color:var(--ink-2)}
+@media (max-width:760px){.faq{grid-template-columns:1fr}}
+
+/* Abschluss */
+.close{background:var(--ink);color:var(--paper);border-radius:var(--r-lg);padding:56px;display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+.close h2{color:var(--paper)}
+.close .intro{color:rgba(239,231,216,.75)}
+.close .eyebrow{color:var(--blue)}
+.contact-lines{display:grid;gap:10px;margin-top:28px}
+.contact-lines a{color:rgba(239,231,216,.85);text-decoration:none;font:500 .95rem var(--mono);display:inline-flex;align-items:center;min-height:44px}
+.contact-lines a:hover{color:var(--blue)}
+.builder{background:var(--paper);color:var(--ink);border-radius:var(--r-md);padding:24px;display:grid;gap:18px}
+.builder .f{display:grid;gap:8px}
+.builder label,.builder .lbl{font-size:.86rem;color:var(--muted)}
+.biz select,.builder select,.builder textarea{font:16px var(--body);color:var(--ink);background:var(--card);border:1.5px solid var(--line-2);border-radius:10px;min-height:48px;padding:10px 14px;width:100%;-webkit-appearance:none;appearance:none}
+.biz select{background:var(--paper) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2317161a' stroke-width='2'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E") no-repeat right 14px center/18px;border:0;height:54px;padding-right:44px}
+.builder select{background:var(--card) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2317161a' stroke-width='2'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E") no-repeat right 12px center/18px;padding-right:40px}
+.builder textarea{resize:vertical;line-height:1.45}
+.builder select:focus,.builder textarea:focus{outline:none;border-color:var(--blue-ink);box-shadow:0 0 0 3px var(--blue-soft)}
+.biz select:focus{outline:none;box-shadow:0 0 0 3px var(--blue)}
+.biz input{margin-top:8px}
+.f.two{grid-template-columns:1fr 1fr;gap:12px}
+@media (max-width:520px){.f.two{grid-template-columns:1fr}}
+.reel.empty{cursor:default;opacity:.55}
+.reel.empty:hover{transform:none}
+.builder input[type=text]{font:16px var(--body);color:var(--ink);background:var(--card);border:1.5px solid var(--line-2);border-radius:10px;height:48px;padding:0 14px;width:100%}
+.builder input[type=text]:focus{outline:none;border-color:var(--blue-ink);box-shadow:0 0 0 3px var(--blue-soft)}
+.seg{display:flex;flex-wrap:wrap;gap:6px}
+.seg button{border:1.5px solid var(--line-2);background:var(--card);border-radius:10px;min-height:44px;padding:0 14px;font:500 .92rem var(--body);color:var(--ink);cursor:pointer;transition:background-color .15s var(--ease),border-color .15s var(--ease),color .15s var(--ease)}
+.seg button[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:var(--paper)}
+.preview{font-size:.9rem;color:var(--ink-2);background:var(--card);border:1px dashed var(--line-2);border-radius:10px;padding:12px 14px;white-space:pre-wrap}
+.builder .btn{width:100%}
+.missing{margin:4px 0 0;font-size:.88rem;color:#a3362a;font-weight:500}
+.missing.shake{animation:shake .35s var(--ease)}
+@keyframes shake{25%{transform:translateX(-4px)}75%{transform:translateX(4px)}}
+.builder input.invalid{border-color:#a3362a;box-shadow:0 0 0 3px rgba(163,54,42,.12)}
+.lbl.invalid{color:#a3362a;font-weight:600}
+#sendWa[aria-disabled="true"]{opacity:.45}
+.missing.ok{color:#2f6b3a}
+.builder .small{font-size:.8rem;color:var(--muted);margin:0;text-align:center}
+@media (max-width:900px){.close{grid-template-columns:1fr;padding:32px 20px}}
+
+footer{padding:40px 0 calc(110px + env(safe-area-inset-bottom));font-size:.86rem;color:var(--muted);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+footer a{color:var(--ink-2);display:inline-block;padding:12px 4px}
+
+/* Mobile Abschluss-Leiste */
+.dock{position:fixed;left:12px;right:12px;bottom:calc(12px + env(safe-area-inset-bottom));display:none;gap:8px;align-items:center;justify-content:space-between;background:var(--ink);color:var(--paper);border-radius:16px;padding:8px 8px 8px 16px;box-shadow:0 10px 30px rgba(23,22,26,.25);transform:translateY(150%);transition:transform .25s var(--ease);z-index:30}
+.dock.show{transform:none}
+.dock span{font-size:.86rem;line-height:1.25}
+.dock span b{display:block;font:600 1rem var(--display)}
+.dock .btn{height:44px;padding:0 16px}
+@media (max-width:760px){.dock{display:flex}}
+
+.reveal{opacity:0;transform:translateY(12px);transition:opacity .6s var(--ease),transform .6s var(--ease)}
+.reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reveal{opacity:1;transform:none}.reel.on .bar i{animation:none;width:100%}*{transition:none!important}}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
+  <symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8h.01"/></symbol>
+  <symbol id="i-play" viewBox="0 0 24 24"><path d="M6 4l14 8-14 8z"/></symbol>
+  <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+  <symbol id="i-msg" viewBox="0 0 24 24"><path d="M21 11.5a8.4 8.4 0 0 1-12.3 7.5L3 21l2-5.6A8.4 8.4 0 1 1 21 11.5Z"/></symbol>
+  <symbol id="s-scissors" viewBox="0 0 24 24"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M20 4 8.1 15.9M14.5 14.5 20 20M8.1 8.1 12 12"/></symbol>
+  <symbol id="s-cam" viewBox="0 0 24 24"><path d="M23 7l-7 5 7 5V7Z"/><rect x="1" y="5" width="15" height="14" rx="2"/></symbol>
+  <symbol id="s-users" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.9M16 3.1a4 4 0 0 1 0 7.8"/></symbol>
+  <symbol id="s-tag" viewBox="0 0 24 24"><path d="M20.6 13.4 13.4 20.6a2 2 0 0 1-2.8 0L2 12V2h10l8.6 8.6a2 2 0 0 1 0 2.8Z"/><circle cx="7" cy="7" r="1.5"/></symbol>
+  <symbol id="s-cup" viewBox="0 0 24 24"><path d="M17 8h1a4 4 0 0 1 0 8h-1M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V8ZM6 2v3M10 2v3M14 2v3"/></symbol>
+  <symbol id="s-tool" viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.8-3.8a6 6 0 0 1-7.9 7.9l-6.9 6.9a2.1 2.1 0 0 1-3-3l6.9-6.9a6 6 0 0 1 7.9-7.9l-3.8 3.8Z"/></symbol>
+  <symbol id="s-spark" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></symbol>
+</svg>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+  <symbol id="i-vol" viewBox="0 0 24 24"><path d="M11 5 6 9H2v6h4l5 4V5Z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M19 5a10 10 0 0 1 0 14"/></symbol>
+  <symbol id="i-mute" viewBox="0 0 24 24"><path d="M11 5 6 9H2v6h4l5 4V5Z"/><path d="m22 9-6 6M16 9l6 6"/></symbol>
+</svg>
+
+<header class="nav" id="nav">
+  <div class="wrap">
+    <a class="logo" href="#top" aria-label="Tobias Sereinig, zum Seitenanfang"><span class="logo-mark"><i></i></span><span>Tobias Sereinig<small>Werbeagentur</small></span></a>
+    <nav>
+      <a href="#arbeiten">Arbeiten</a><a href="#ablauf">Ablauf</a><a href="#preis">Preis</a><a href="#ueber-mich">Über mich</a>
+      <a class="btn btn-main btn-sm" href="#anfrage">Anfragen</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap" id="top">
+  <div class="hero">
+    <div class="reveal">
+      <span class="kicker"><i></i>Reels und Videos für Unternehmen in Kärnten</span>
+      <h1>Jeden Monat <span class="hl">fertige Reels</span> für dein Unternehmen</h1>
+      <p class="lead">Ich komme zu dir, drehe in kurzer Zeit genug Material für mehrere Videos und liefere sie fertig geschnitten, mit Untertiteln, Logo und Musik.</p>
+      <div class="cta">
+        <a class="btn btn-main js-wa" href="#anfrage"><svg><use href="#i-msg"/></svg>Per WhatsApp anfragen</a>
+        <a class="btn btn-ghost" href="#arbeiten">Arbeiten ansehen<svg><use href="#i-arrow"/></svg></a>
+      </div>
+      <div class="proof"><b>4 Videos</b><span>aus einem Dreh von nicht einmal einer Stunde, für Capex Green in Villach</span></div>
+    </div>
+    <div class="stage reveal">
+      <div class="side-stack"><div class="side-card"><b>3K · 4K</b>Hoch- und Querformat</div><div class="side-card"><b>7 Werktage</b>vom Dreh bis zum fertigen Video</div></div>
+      <div class="phone-wrap"><div class="phone">
+        <div class="screen">
+                    <span class="rec"><i></i>REC</span>
+          <video id="heroVid" src="media/hero.mp4" poster="media/biomassekraftwerk.jpg" muted loop playsinline preload="metadata" aria-label="Werbevideo für Capex Green"></video>
+          <button class="sound" id="soundBtn" aria-label="Ton einschalten"><svg><use href="#i-mute"/></svg></button>
+        </div>
+      </div>
+      <p class="phone-cap"><b>Capex Green</b> · Biomassekraftwerk Villach · Ton an mit dem Lautsprecher</p></div>
+      
+    </div>
+  </div>
+
+  <div class="facts reveal">
+    <div><b>ab 359 €</b><span>pro Monat für 2 Reels</span></div>
+    <div><b>1 Dreh</b><span>bei dir vor Ort pro Monat</span></div>
+    <div><b>2 bis 8</b><span>fertige Reels pro Monat</span></div>
+    <div><b>0 €</b><span>für das Erstgespräch</span></div>
+  </div>
+
+  <section id="arbeiten">
+    <div class="case">
+      <div class="case-text reveal">
+        <p class="eyebrow">Referenz</p>
+        <h2>Capex Green: 4 Videos aus einem Dreh</h2>
+        <p>Capex Green baut in Villach ein Biomassekraftwerk und wollte auf Social Media erklären, was dort entsteht und woher der Brennstoff kommt.</p>
+        <p>Wir haben an einem Termin von nicht einmal einer Stunde gedreht. Daraus sind 4 fertige Videos entstanden, zwei davon siehst du hier.</p>
+        <div class="case-stats">
+          <div><b>&lt; 1 h</b><span>Drehzeit</span></div>
+          <div><b>4</b><span>fertige Videos</span></div>
+          <div><b>9:16</b><span>für Reels</span></div>
+        </div>
+        <a class="btn btn-main js-wa" href="#anfrage"><svg><use href="#i-msg"/></svg>So etwas will ich auch</a>
+      </div>
+      <div class="vids reveal" id="vids"></div>
+    </div>
+  </section>
+
+  <section id="plan" style="padding-top:0">
+    <div class="planner reveal">
+      <div>
+        <p class="eyebrow">Probier es aus</p>
+        <h2 id="planTitle">Was würdest du posten?</h2>
+        <p class="intro">Wähle deine Branche und sieh, wie ein Monat mit 4 Reels bei dir aussehen kann. Die Themen legen wir später gemeinsam fest.</p>
+        <div class="biz">
+          <label for="biz">Deine Branche</label>
+          <select id="biz"><option value="">Bitte auswählen</option><option value="Friseur">Friseur und Barber</option><option value="Kosmetik">Kosmetik und Beauty</option><option value="Restaurant">Restaurant und Café</option><option value="Bäckerei">Bäckerei und Konditorei</option><option value="Hotel">Hotel und Pension</option><option value="Fitness">Fitness und Sport</option><option value="Handwerk">Handwerk und Bau</option><option value="Autowerkstatt">Autowerkstatt und Autohaus</option><option value="Geschäft">Handel und Geschäft</option><option value="Beratung">Büro, Beratung und Kanzlei</option><option value="Bank">Bank und Versicherung</option><option value="Immobilien">Immobilien</option><option value="Gesundheit">Gesundheit und Praxis</option><option value="Landwirtschaft">Landwirtschaft und Energie</option><option value="other">Etwas anderes</option></select>
+          <input id="bizOther" type="text" placeholder="Welche Branche? z. B. Tierarzt, Weingut, Verein" maxlength="40" hidden>
+        </div>
+      </div>
+      <div>
+        <div class="reels" id="reels"></div>
+        <div class="planner-foot"><span id="ideaLine">Wähle zuerst deine Branche</span><a class="btn btn-blue btn-sm" href="#anfrage">Diesen Plan anfragen<svg><use href="#i-arrow"/></svg></a></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="ablauf" style="padding-top:0">
+    <div class="head reveal">
+      <div><p class="eyebrow">Ablauf</p><h2>So läuft ein Monat</h2></div>
+      <p class="intro">Du brauchst keine Ideen und keine Schnitt-App. Dein Aufwand ist der Drehtermin und ein paar Minuten für Freigabe und Feedback.</p>
+    </div>
+    <ol class="steps reveal">
+      <li><span class="n">01 · Tag 1</span><h3>Themenplan</h3><p>Ich schicke dir Reel-Ideen passend zu deinen Angeboten. Du gibst sie frei oder änderst sie.</p></li>
+      <li><span class="n">02 · Tag 5 bis 10</span><h3>Dreh bei dir</h3><p>Ein Termin vor Ort. Du musst nicht vor die Kamera, wenn du nicht willst.</p></li>
+      <li><span class="n">03 · bis 7 Werktage danach</span><h3>Schnitt</h3><p>Fertige Videos mit Untertiteln, Logo und lizenzfreier Musik per Download-Link.</p></li>
+      <li><span class="n">04 · jede Woche</span><h3>Posten</h3><p>Zu jedem Reel bekommst du einen Textvorschlag. Eine Korrekturrunde pro Reel ist dabei.</p></li>
+    </ol>
+  </section>
+
+  <section id="preis" style="padding-top:0">
+    <div class="head reveal">
+      <div><p class="eyebrow">Leistungen</p><h2>Was du bekommst</h2></div>
+      <p class="intro">Den genauen Preis bekommst du im Angebot, passend zu deinem Unternehmen und deinem Budget.</p>
+    </div>
+    <div class="offers reveal">
+      <div class="offer main">
+        <h3>Reel-Abo</h3>
+        <div class="price"><b>ab 359 €</b><span>pro Monat für 2 Reels, Mindestlaufzeit 3 Monate</span></div>
+        <div class="pkgs"><div><b>2</b><span>Reels</span></div><div><b>4</b><span>Reels</span></div><div><b>8</b><span>Reels</span></div></div>
+        <ul>
+          <li><svg><use href="#i-check"/></svg>Themenplan und Textvorschläge für jedes Reel</li>
+          <li><svg><use href="#i-check"/></svg>Dreh bei dir vor Ort, Anfahrt bis 60 km inklusive</li>
+          <li><svg><use href="#i-check"/></svg>Fertiger Schnitt mit Untertiteln, Logo und Musik</li>
+          <li><svg><use href="#i-check"/></svg>Lieferung innerhalb von 7 Werktagen nach dem Dreh</li>
+          <li><svg><use href="#i-check"/></svg>Mindestlaufzeit 3 Monate, danach monatlich kündbar</li>
+        </ul>
+        <a class="btn btn-main js-wa" href="#anfrage"><svg><use href="#i-msg"/></svg>Angebot anfragen</a>
+      </div>
+      <div class="offer alt">
+        <h3>Videos und Posts</h3>
+        <div class="price"><b style="font-size:2.2rem">auf Anfrage</b></div>
+        <ul>
+          <li><svg><use href="#i-check"/></svg>Werbevideos im Hochformat für Social Media</li>
+          <li><svg><use href="#i-check"/></svg>Videos im Querformat in 4K für Website, YouTube oder Präsentationen</li>
+          <li><svg><use href="#i-check"/></svg>Instagram-Posts und Story-Grafiken</li>
+          <li><svg><use href="#i-check"/></svg>Imagefilm, Recruiting- oder Willkommensvideo</li>
+        </ul>
+        <a class="btn btn-ghost" href="#anfrage" data-pick="Einzelnes Video">Projekt anfragen<svg><use href="#i-arrow"/></svg></a>
+      </div>
+      <div class="offer alt">
+        <h3>Websites</h3>
+        <div class="price"><b style="font-size:2.2rem">auf Anfrage</b></div>
+        <ul>
+          <li><svg><use href="#i-check"/></svg>Moderne Website wie diese, am Handy genauso sauber wie am Laptop</li>
+          <li><svg><use href="#i-check"/></svg>Mit deinen Videos, Fotos und Anfrage per WhatsApp</li>
+          <li><svg><use href="#i-check"/></svg>Impressum und Datenschutz für Österreich vorbereitet</li>
+        </ul>
+        <a class="btn btn-ghost" href="#anfrage" data-pick="Website">Website anfragen<svg><use href="#i-arrow"/></svg></a>
+      </div>
+    </div>
+    <p class="price-note reveal"><svg><use href="#i-info"/></svg><span>Preise zum Stand vom 25.11.2026. Sie gelten zum Zeitpunkt deines Besuchs und können sich jederzeit ändern. Verbindlich ist nur der Preis in deinem unterschriebenen Angebot. Als Kleinunternehmer verrechne ich keine Umsatzsteuer. Das Angebot richtet sich an Unternehmen.</span></p>
+  </section>
+
+  <section id="ueber-mich" style="padding-top:0">
+    <div class="about">
+      <div class="viewfinder reveal" id="vf" role="img" aria-label="Porträt von Tobias Sereinig im Kamera-Sucher">
+        <img src="media/tobias.jpg" alt="" width="800" height="1000" loading="lazy">
+        <span class="focus" id="focus"></span>
+        <div class="vf-ui"><span class="c tl"></span><span class="c tr"></span><span class="c bl"></span><span class="c br"></span><span class="r"><i></i>REC</span><span class="tc" id="vfTc">00:00:00</span><span class="meta"><span>3K · 9:16</span><span>Rosenbach</span></span></div>
+      </div>
+      <div class="about-text reveal">
+        <p class="eyebrow">Über mich</p>
+        <h2>Hallo, ich bin Tobias</h2>
+        <p>Ich drehe und schneide Reels und Werbevideos für Unternehmen in Kärnten. Mein Büro ist in Rosenbach, zu den Drehs komme ich zu dir.</p>
+        <div class="atabs" role="tablist" aria-label="Mehr über mich">
+          <button role="tab" aria-selected="true" data-t="0">Was ich mache</button>
+          <button role="tab" aria-selected="false" data-t="1">Wie ich arbeite</button>
+          <button role="tab" aria-selected="false" data-t="2">Ausrüstung</button>
+        </div>
+        <p class="apanel" id="apanel" role="tabpanel" aria-live="polite"></p>
+        <p style="font-size:.86rem;color:var(--muted)">Tipp auf das Bild, um scharf zu stellen</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="fragen" style="padding-top:0">
+    <div class="head reveal"><div><p class="eyebrow">Fragen</p><h2>Gut zu wissen</h2></div></div>
+    <div class="faq reveal">
+      <details><summary>Muss ich selbst vor die Kamera?<svg><use href="#i-plus"/></svg></summary><p>Nein. Viele Reels zeigen Hände, Arbeit, Produkte oder dein Team. Wenn du sprechen willst, helfe ich dir mit kurzen Sätzen, die du vorher siehst.</p></details>
+      <details><summary>Darf ich die Musik verwenden?<svg><use href="#i-plus"/></svg></summary><p>Ja. Ich verwende nur lizenzfreie Musik. Für Posts auf deinen eigenen Kanälen und deiner Website ist die Lizenz dabei. Für bezahlte Anzeigen gibt es eine eigene Option.</p></details>
+      <details><summary>Was, wenn ich einen Drehtermin absagen muss?<svg><use href="#i-plus"/></svg></summary><p>Sag bis 24 Stunden vorher Bescheid, dann verschieben wir ohne Kosten. Bei einer späteren Absage verrechne ich 100 € Ausfallpauschale.</p></details>
+      <details><summary>Wer postet die Reels?<svg><use href="#i-plus"/></svg></summary><p>Du. Du bekommst die Videos und einen Textvorschlag und lädst sie selbst hoch. So bleibt dein Account bei dir.</p></details>
+      <details><summary>Wie viele Korrekturen sind drin?<svg><use href="#i-plus"/></svg></summary><p>Eine Runde pro Reel: alle Wünsche in einer Nachricht, zum Beispiel Text ändern oder eine Szene kürzen. Größere Änderungen besprechen wir vorher.</p></details>
+      <details><summary>Wie schnell kann ich starten?<svg><use href="#i-plus"/></svg></summary><p>Nach dem Erstgespräch bekommst du ein Angebot. Mit deiner Unterschrift planen wir den ersten Drehtermin, meistens innerhalb von zwei Wochen.</p></details>
+    </div>
+  </section>
+
+  <section id="anfrage" style="padding-top:0">
+    <div class="close reveal">
+      <div>
+        <p class="eyebrow">Anfrage in 30 Sekunden</p>
+        <h2>Lass uns über deine Videos reden</h2>
+        <p class="intro">Füll kurz alles aus, dann öffnet sich WhatsApp mit einer fertigen Nachricht, die du nur noch abschickst. Ich melde mich so schnell wie möglich, spätestens nach 2 Werktagen, mit einem Vorschlag.</p>
+        <div class="contact-lines">
+          <a href="tel:+436641334560">0664 1334560</a>
+          <a href="mailto:tobias.sereinig@gmail.com">tobias.sereinig@gmail.com</a>
+        </div>
+      </div>
+      <form class="builder" id="builder" onsubmit="return false">
+        <div class="f"><span class="lbl" id="lWhat">Was brauchst du? Mehrere möglich</span>
+          <div class="seg multi" role="group" aria-labelledby="lWhat" data-k="what"><button type="button" aria-pressed="true">Reels jeden Monat</button><button type="button" aria-pressed="false">Einzelnes Video</button><button type="button" aria-pressed="false">Instagram-Posts</button><button type="button" aria-pressed="false">Website</button><button type="button" aria-pressed="false">Etwas anderes</button></div></div>
+        <div class="f" id="pkgWrap"><span class="lbl" id="lPkg">Wie viele Reels pro Monat?</span>
+          <div class="seg" role="group" aria-labelledby="lPkg" data-k="pkg"><button type="button" aria-pressed="false">2 Reels</button><button type="button" aria-pressed="true">4 Reels</button><button type="button" aria-pressed="false">8 Reels</button><button type="button" aria-pressed="false">Weiß ich noch nicht</button></div></div>
+        <div class="f" id="otherWrap" hidden><label for="bOther">Was brauchst du genau?</label><input id="bOther" type="text" maxlength="200" placeholder="z. B. Drohnenaufnahmen vom Weinberg"></div>
+        <div class="f two">
+          <div class="f"><label for="bBiz">Unternehmen</label><input id="bBiz" type="text" placeholder="z. B. Tischlerei Huber" maxlength="80" autocomplete="organization"></div>
+          <div class="f"><label for="bName">Dein Name</label><input id="bName" type="text" placeholder="Vor- und Nachname" maxlength="80" autocomplete="name"></div>
+        </div>
+        <div class="f"><label for="bAddr">Adresse für Angebot und Vertrag</label><input id="bAddr" type="text" placeholder="Straße, PLZ, Ort" maxlength="120" autocomplete="street-address"></div>
+        <div class="f"><label for="bMail">E-Mail für Angebot und Vertrag</label><input id="bMail" type="text" inputmode="email" placeholder="name@firma.at" maxlength="100" autocomplete="email"></div>
+        <div class="f"><span class="lbl" id="lStart">Wann möchtest du starten?</span>
+          <div class="seg" role="group" aria-labelledby="lStart" data-k="start"><button type="button" aria-pressed="false">So bald wie möglich</button><button type="button" aria-pressed="false">Nächsten Monat</button><button type="button" aria-pressed="false">Später</button></div></div>
+        <div class="f"><span class="lbl" id="lBud">Dein Budget pro Monat oder Projekt</span>
+          <div class="seg" role="group" aria-labelledby="lBud" data-k="budget"><button type="button" aria-pressed="false">bis 400 €</button><button type="button" aria-pressed="false">400 bis 700 €</button><button type="button" aria-pressed="false">700 bis 1.000 €</button><button type="button" aria-pressed="false">1.000 bis 2.000 €</button><button type="button" aria-pressed="false">über 2.000 €</button></div></div>
+        <div class="f"><label for="bIdea">Kurz deine Idee (freiwillig)</label><input id="bIdea" type="text" maxlength="200" placeholder="z. B. Wir suchen Lehrlinge und wollen unser Team zeigen"></div>
+        <div class="f"><span class="lbl">Deine Nachricht</span><div class="preview" id="preview"></div><p class="missing" id="missing"></p></div>
+        <a class="btn btn-main" id="sendWa" href="https://wa.me/436641334560"><svg><use href="#i-msg"/></svg>In WhatsApp öffnen</a>
+        <p class="small">Der Knopf funktioniert, sobald alles ausgefüllt ist. Es wird nichts automatisch gesendet, du siehst die Nachricht vorher in WhatsApp.</p>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer class="wrap">
+  <span>Tobias Sereinig, BSc · Werbeagentur · Lessach 32, 9183 Rosenbach</span>
+  <span><a href="impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutz</a></span>
+</footer>
+
+<div class="dock" id="dock"><span><b>Reels ab 359 €</b>pro Monat</span><a class="btn btn-blue js-wa" href="#anfrage"><svg><use href="#i-msg"/></svg>Anfragen</a></div>
+
+<script>
+const WA = "https://wa.me/436641334560?text=";
+const $ = id => document.getElementById(id);
+const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+/* Kopfzeile */
+const nav = $("nav");
+addEventListener("scroll", ()=>nav.classList.toggle("scrolled", scrollY > 8), {passive:true});
+
+/* Hero-Video */
+const hv = $("heroVid"), sb = $("soundBtn");
+if (!reduce) { new IntersectionObserver(([e])=>{ e.isIntersecting ? hv.play().catch(()=>{}) : hv.pause(); },{threshold:.3}).observe(hv); }
+sb.addEventListener("click", ()=>{
+  hv.muted = !hv.muted; if (hv.paused) hv.play().catch(()=>{});
+  sb.setAttribute("aria-label", hv.muted ? "Ton einschalten" : "Ton ausschalten");
+  sb.querySelector("use").setAttribute("href", hv.muted ? "#i-mute" : "#i-vol");
+});
+
+/* Referenz-Videos */
+const VIDEOS = [
+  { src:"media/biomassekraftwerk.mp4", poster:"media/biomassekraftwerk.jpg", title:"Das neue Biomassekraftwerk", client:"Capex Green, Villach" },
+  { src:"media/miscanthus.mp4", poster:"media/miscanthus.jpg", title:"Was ist Miscanthus?", client:"Capex Green, Villach" }
+];
+VIDEOS.forEach(v=>{
+  const f = document.createElement("figure"); f.className = "vid";
+  f.innerHTML = `<div class="box"><video preload="none" playsinline></video><button class="play"><span class="t"></span><i><svg viewBox="0 0 24 24"><use href="#i-play"/></svg></i></button></div>`;
+  const vid = f.querySelector("video"); vid.src = v.src; vid.poster = v.poster;
+  f.querySelector(".play").setAttribute("aria-label", "Video abspielen: " + v.title);
+  const t = f.querySelector(".t"); t.textContent = v.title; const sm = document.createElement("small"); sm.textContent = v.client; t.appendChild(sm);
+  f.querySelector(".play").addEventListener("click", e=>{
+    document.querySelectorAll("video").forEach(o=>o!==vid && o.pause());
+    vid.controls = true; vid.muted = false; vid.play().catch(()=>{}); e.currentTarget.remove();
+  });
+  $("vids").appendChild(f);
+});
+
+/* Monatsplan */
+const GROUPS = [
+  [/gesundheit|praxis|arzt|ärzt|therap|pflege|apotheke|tierarzt/i, "s-users", [["Eure Praxis","Räume und Empfang, damit sich Patienten vorab orientieren","s-cam"],["Eine Frage, eine Antwort","Eine häufige Frage ruhig und verständlich erklärt","s-spark"],["Team im Porträt","Wer euch empfängt und betreut","s-users"],["Termin und Anfahrt","Wie man zu euch kommt und einen Termin bucht","s-tag"]]],
+  [/energie|kraftwerk|solar|photovolt|landwirt|bauernhof|\bhof\b|forst|holz|biomass/i, "s-spark", [["Vor Ort","Wo eure Arbeit passiert, draußen und echt","s-cam"],["So funktioniert es","Ein Ablauf einfach erklärt, Schritt für Schritt","s-spark"],["Wer dahintersteht","Das Team und warum es das macht","s-users"],["Was als Nächstes kommt","Ein Projekt, ein Termin oder eine Einladung","s-tag"]]],
+  [/kosmetik|beauty|nagel|nail|massage|wellness|spa/i, "s-spark", [["Dein Raum","Wie es bei euch aussieht, bevor die erste Kundin kommt","s-cam"],["Eine Behandlung","Ablauf in ruhigen Bildern, Schritt für Schritt","s-spark"],["Wer dich behandelt","Das Team und was es besonders gern macht","s-users"],["Termin im Monat","Ein Angebot mit klarem Buchungslink","s-tag"]]],
+  [/fris|barb|salon|haar/i, "s-scissors", [["Hinter den Kulissen","Ein Morgen im Salon, bevor die Kunden kommen","s-cam"],["So entsteht es","Ein Schnitt im Zeitraffer, Schritt für Schritt","s-scissors"],["Team","Wer dir die Haare schneidet und was er gern macht","s-users"],["Angebot des Monats","Zum Beispiel Färben im Dezember, mit Termin-Link","s-tag"]]],
+  [/restaur|gastro|gasth|wirt|café|cafe|kaffee|bar\b|pizz|imbiss|bäck|baeck|konditor|küche|catering/i, "s-cup", [["Vor dem Aufsperren","Was vorbereitet wird, bevor geöffnet ist","s-cam"],["Ein Produkt entsteht","Vom Rohstoff bis auf den Teller in 30 Sekunden","s-cup"],["Wer bei euch arbeitet","Das Team stellt sich in einem Satz vor","s-users"],["Diese Woche neu","Was es gerade gibt, mit Reservierung oder Bestellung","s-tag"]]],
+  [/fitness|gym|studio|yoga|pilates|physio|sport|training/i, "s-spark", [["Ein Tag im Studio","Der Raum, die Geräte, die Stimmung","s-cam"],["Eine Übung erklärt","Richtig gemacht in 20 Sekunden","s-spark"],["Trainer im Porträt","Wer dich betreut und warum","s-users"],["Probetraining","Einladung mit klarem Termin","s-tag"]]],
+  [/tischl|schrein|elektr|install|maler|dach|bau|handwerk|schloss|zimmer|fliesen|spengler|garten|metall/i, "s-tool", [["Auf der Baustelle","Ein Tag beim Team, ohne gestellte Szenen","s-cam"],["Detail im Zeitraffer","Ein Arbeitsschritt, den sonst niemand sieht","s-tool"],["Lehrling gesucht","Das Team erzählt, wie die Arbeit wirklich ist","s-users"],["Fertiges Projekt","Das Ergebnis mit Ort und Anfrage-Link","s-tag"]]],
+  [/hotel|pension|ferien|camping|gasthof|apartment|urlaub/i, "s-cam", [["Morgens im Haus","Frühstück, Licht, die ersten Gäste","s-cam"],["Ein Zimmer zeigen","In 20 Sekunden durch das schönste Zimmer","s-spark"],["Gastgeber","Wer euch empfängt und was er gern empfiehlt","s-users"],["Angebot der Saison","Ein Paket mit Datum und Buchungslink","s-tag"]]],
+  [/auto|kfz|werkstatt|reifen|motorrad|fahrzeug/i, "s-tool", [["Morgens in der Werkstatt","Wenn die ersten Autos reinrollen","s-cam"],["Ein Handgriff erklärt","Was beim Service wirklich passiert","s-tool"],["Mechaniker im Porträt","Wer an deinem Auto arbeitet","s-users"],["Aktion des Monats","Zum Beispiel Reifenwechsel, mit Terminlink","s-tag"]]],
+  [/shop|laden|boutique|geschäft|handel|mode|blumen|optik|buch|möbel/i, "s-tag", [["Neu eingetroffen","Was gerade ins Regal kommt","s-cam"],["Ein Produkt im Detail","Warum es sich lohnt, in 20 Sekunden","s-spark"],["Beratung","Wer dich im Geschäft berät","s-users"],["Aktion der Woche","Ein Angebot mit Datum und Adresse","s-tag"]]],
+  [/steuer|kanzlei|anwalt|notar|versicher|bank|büro|buero|beratung|immobil|makler|agentur|it\b|software/i, "s-users", [["Ein Tag im Büro","Wer ihr seid und wie euer Alltag aussieht","s-cam"],["Eine Frage, eine Antwort","Eine häufige Kundenfrage, kurz und verständlich erklärt","s-spark"],["Team im Porträt","Wer sich um deine Anliegen kümmert","s-users"],["Termin vereinbaren","Ein klarer nächster Schritt mit Link","s-tag"]]]
+];
+
+function ideasFor(name){
+  const n = (name || "").trim();
+  if (!n) return [["Hinter den Kulissen","Wie ein ganz normaler Tag bei dir aussieht","s-cam"],["So entsteht es","Ein Arbeitsschritt im Zeitraffer","s-spark"],["Team im Porträt","Wer bei dir arbeitet, in einem Satz","s-users"],["Angebot des Monats","Ein Angebot mit klarem nächsten Schritt","s-tag"]];
+  const g = GROUPS.find(([rx]) => rx.test(n));
+  if (g) return g[2];
+  return [["Ein Tag bei euch",`Wie der Alltag bei ${n} aussieht`,"s-cam"],["So arbeiten wir","Ein Arbeitsschritt, den Kunden sonst nicht sehen","s-spark"],["Team im Porträt",`Wer bei ${n} arbeitet, in einem Satz`,"s-users"],["Häufige Frage","Eine Kundenfrage, kurz und verständlich beantwortet","s-tag"]];
+}
+let business = "", active = 0;
+function drawReels(){
+  const box = $("reels"); box.innerHTML = "";
+  if (!business.trim()){
+    for (let i=0;i<4;i++){ const d=document.createElement("div"); d.className="reel empty"; d.innerHTML=`<div><div class="bar"></div><div class="wk">Woche ${i+1}</div></div><div class="ic"><svg viewBox="0 0 24 24"><use href="#s-cam"/></svg></div><div><b>Dein Reel</b><small>Wähle links deine Branche</small></div>`; box.appendChild(d); }
+    $("ideaLine").textContent = "Wähle zuerst deine Branche"; $("planTitle").textContent = "Was würdest du posten?"; return;
+  }
+  const list = ideasFor(business);
+  list.forEach(([t,s,ic],i)=>{
+    const b = document.createElement("button");
+    b.className = "reel" + (i===active ? " on" : ""); b.type = "button";
+    b.innerHTML = `<div><div class="bar"><i></i></div><div class="wk">Woche ${i+1}</div></div><div class="ic"><svg viewBox="0 0 24 24"><use href="#${ic}"/></svg></div><div><b></b><small></small></div>`;
+    b.querySelector("b").textContent = t; b.querySelector("small").textContent = s;
+    b.addEventListener("click", ()=>{ active = i; drawReels(); buildMsg(); });
+    box.appendChild(b);
+  });
+  $("ideaLine").textContent = `Woche ${active+1}: ${list[active][0]}`;
+  $("planTitle").textContent = `Dein Monat: ${branchLabel()}`;
+}
+function branchLabel(){ const sel=$("biz"); return sel.value==="other" ? ($("bizOther").value.trim() || "dein Unternehmen") : sel.options[sel.selectedIndex].text; }
+function syncBranch(from){
+  const v = from.value; $("biz").value = v;
+  $("bizOther").hidden = v !== "other";
+  business = v === "other" ? $("bizOther").value : v; active = 0; drawReels(); buildMsg();
+}
+$("biz").addEventListener("change", e=>{ syncBranch(e.target); if (e.target.value==="other") $("bizOther").focus(); });
+let deb;
+$("bizOther").addEventListener("input", e=>{ clearTimeout(deb); deb = setTimeout(()=>{ business = e.target.value; active = 0; drawReels(); buildMsg(); }, 200); });
+drawReels();
+
+/* Über mich */
+const ABOUT = [
+  "Reels im Hochformat für Instagram, TikTok und Facebook und Videos im Querformat für Website, YouTube oder Präsentationen. Ich plane die Themen, drehe bei dir vor Ort und liefere fertig geschnittene Videos mit Untertiteln, Logo und Musik.",
+  "Die Themen legen wir gemeinsam fest, damit die Videos zu dir passen. Ich zeige deine Arbeit und dein Team so, wie sie sind. Feedback kommt gesammelt, so bleibt dein Aufwand klein.",
+  "Ich filme mit der DJI Osmo Pocket 4P: im Hochformat in 3K, im Querformat in 4K. Der eingebaute Gimbal hält die Bilder ruhig, auch wenn ich mich bewege. Geschnitten wird mit Adobe und CapCut, die Musik ist lizenzfrei."
+];
+(function(){
+  const panel = $("apanel"), tabs = document.querySelectorAll(".atabs button");
+  panel.textContent = ABOUT[0];
+  tabs.forEach(b=>b.addEventListener("click",()=>{
+    tabs.forEach(x=>x.setAttribute("aria-selected", x===b));
+    panel.classList.add("fade");
+    setTimeout(()=>{ panel.textContent = ABOUT[+b.dataset.t]; panel.classList.remove("fade"); }, 180);
+  }));
+  const vf = $("vf"), focus = $("focus"), tc = $("vfTc"); let t0 = 0, raf = 0;
+  const tick = t => { const s = Math.floor((t-t0)/1000); tc.textContent = "00:" + String(Math.floor(s/60)).padStart(2,"0") + ":" + String(s%60).padStart(2,"0"); raf = requestAnimationFrame(tick); };
+  const move = e => { const r = vf.getBoundingClientRect(); focus.style.left = ((e.clientX-r.left)/r.width*100)+"%"; focus.style.top = ((e.clientY-r.top)/r.height*100)+"%"; };
+  vf.addEventListener("pointermove", e=>{ if (e.pointerType === "mouse") move(e); });
+  vf.addEventListener("pointerdown", e=>{ move(e); focus.classList.add("tap"); setTimeout(()=>focus.classList.remove("tap"),180); });
+  new IntersectionObserver(([e])=>{
+    if (e.isIntersecting && !reduce){ vf.classList.add("live"); t0 = performance.now(); raf = requestAnimationFrame(tick); }
+    else { vf.classList.remove("live"); cancelAnimationFrame(raf); }
+  },{threshold:.4}).observe(vf);
+})();
+
+/* Anfrage-Baukasten */
+const state = { what:new Set(["Reels jeden Monat"]), pkg:"4 Reels", start:"", budget:"" };
+document.querySelectorAll(".builder .seg").forEach(g=>g.querySelectorAll("button").forEach(b=>b.addEventListener("click",()=>{
+  if (g.classList.contains("multi")){
+    const on = b.getAttribute("aria-pressed") !== "true"; b.setAttribute("aria-pressed", on);
+    on ? state.what.add(b.textContent) : state.what.delete(b.textContent);
+  } else { g.querySelectorAll("button").forEach(x=>x.setAttribute("aria-pressed", x===b)); state[g.dataset.k] = b.textContent; }
+  buildMsg();
+})));
+function pick(label){
+  document.querySelectorAll('[data-k=what] button').forEach(b=>b.setAttribute("aria-pressed", b.textContent===label));
+  state.what = new Set([label]); buildMsg();
+}
+document.querySelectorAll("[data-pick]").forEach(a=>a.addEventListener("click",()=>pick(a.dataset.pick)));
+["bBiz","bName","bAddr","bMail","bOther","bIdea"].forEach(id=>$(id).addEventListener("input", buildMsg));
+let tried = false;
+const MAIL = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+function missingFields(){
+  const v = id => $(id).value.trim(), W = state.what, m = [];
+  if (!W.size) m.push(["lWhat","Leistung"]);
+  if (W.has("Reels jeden Monat") && !state.pkg) m.push(["lPkg","Anzahl Reels"]);
+  if (W.has("Etwas anderes") && !v("bOther")) m.push(["bOther","was genau"]);
+  if (!v("bBiz")) m.push(["bBiz","Unternehmen"]);
+  if (!v("bName")) m.push(["bName","Name"]);
+  if (v("bAddr").length < 8) m.push(["bAddr","Adresse"]);
+  if (!MAIL.test(v("bMail"))) m.push(["bMail", v("bMail") ? "gültige E-Mail" : "E-Mail"]);
+  if (!state.start) m.push(["lStart","Start"]);
+  if (!state.budget) m.push(["lBud","Budget"]);
+  return m;
+}
+function markInvalid(miss){
+  const ids = new Set(miss.map(x=>x[0]));
+  ["bOther","bBiz","bName","bAddr","bMail"].forEach(id=>{ $(id).classList.toggle("invalid", ids.has(id)); $(id).setAttribute("aria-invalid", ids.has(id)); });
+  ["lWhat","lPkg","lStart","lBud"].forEach(id=>$(id).classList.toggle("invalid", ids.has(id)));
+}
+$("sendWa").addEventListener("click", e=>{
+  const miss = missingFields();
+  if (miss.length){
+    e.preventDefault(); tried = true; markInvalid(miss);
+    const first = $(miss[0][0]); first.scrollIntoView({behavior: reduce ? "auto" : "smooth", block:"center"});
+    if (first.tagName === "INPUT") setTimeout(()=>first.focus({preventScroll:true}), 350);
+    $("missing").classList.add("shake"); setTimeout(()=>$("missing").classList.remove("shake"), 400);
+  }
+});
+function buildMsg(){
+  const v = id => $(id).value.trim();
+  const W = state.what, reels = W.has("Reels jeden Monat");
+  $("pkgWrap").hidden = !reels;
+  $("otherWrap").hidden = !W.has("Etwas anderes");
+  const parts = [...W].map(x=>{
+    if (x === "Reels jeden Monat") return "Reel-Abo (" + state.pkg + (state.pkg.includes("Reels") ? " pro Monat" : "") + ")";
+    if (x === "Etwas anderes") return "Etwas anderes" + (v("bOther") ? ": " + v("bOther") : "");
+    return x;
+  });
+  const leistung = parts.length ? parts.join(", ") : "…";
+  const lines = [
+    "Hallo Tobias, ich möchte ein Angebot.",
+    "",
+    "Leistung: " + leistung,
+    "Unternehmen: " + (v("bBiz") || "…"),
+    "Ansprechperson: " + (v("bName") || "…"),
+    "Adresse: " + (v("bAddr") || "…"),
+    "E-Mail: " + (v("bMail") || "…"),
+    "Start: " + (state.start || "…"),
+    "Budget: " + (state.budget || "…")
+  ];
+  if (reels && business.trim()) lines.push("Idee aus dem Monatsplan: " + ideasFor(business)[active][0]);
+  if (v("bIdea")) lines.push("Meine Idee: " + v("bIdea"));
+  const m = lines.join("\n");
+  $("preview").textContent = m;
+  $("sendWa").href = WA + encodeURIComponent(m);
+  const miss = missingFields();
+  $("missing").textContent = miss.length ? "Bitte noch ausfüllen: " + miss.map(x=>x[1]).join(", ") + "." : "Alles drin für dein Angebot.";
+  $("missing").classList.toggle("ok", !miss.length);
+  $("sendWa").setAttribute("aria-disabled", miss.length ? "true" : "false");
+  if (tried) markInvalid(miss);
+
+}
+buildMsg();
+
+/* Einblenden und Leiste */
+const io = new IntersectionObserver(es=>es.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add("in"); io.unobserve(e.target);} }),{threshold:.1});
+document.querySelectorAll(".reveal").forEach(el=>io.observe(el));
+const seen = new Set(), dock = $("dock");
+const upd = ()=>dock.classList.toggle("show", seen.size === 0 && scrollY > 400);
+[document.querySelector(".hero"), $("anfrage")].forEach(el=>new IntersectionObserver(([e])=>{ e.isIntersecting ? seen.add(el) : seen.delete(el); upd(); }).observe(el));
+addEventListener("scroll", upd, {passive:true});
+</script>
+</body>
+</html>
