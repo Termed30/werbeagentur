@@ -304,7 +304,11 @@ h2{font:600 clamp(2rem,4.2vw,3.2rem)/1.02 var(--display);letter-spacing:-.01em;m
 @media (max-width:640px){.hero::before,.hero::after{display:none}}
 /* Über mich groß und untereinander */
 .me{display:grid;justify-items:center;text-align:center;gap:32px}
+.me-head{padding:16px 40px}
 .me-head h2{margin:0}
+.me-eyebrow{font:600 clamp(1.1rem,2.4vw,1.5rem) var(--body);margin-bottom:8px}
+.me-title{font:600 clamp(2.2rem,5vw,3.6rem)/1 var(--display)}
+.me-title span{display:block;font-size:clamp(4.2rem,13vw,9rem);line-height:.92;letter-spacing:-.02em;color:var(--blue-ink)}
 .me-photo{width:min(620px,100%)!important;aspect-ratio:4/5;box-shadow:0 30px 60px -30px rgba(23,22,26,.4)}
 .me-lead{font:600 clamp(1.4rem,3vw,2rem)/1.25 var(--display);max-width:28ch;margin:0}
 .facts2{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;width:100%;max-width:960px}
@@ -588,7 +592,7 @@ footer a{color:var(--ink-2);display:inline-block;padding:12px 4px}
 
   <section id="ueber-mich" style="padding-top:0">
     <div class="me">
-      <div class="me-head reveal frame-deco" style="padding:8px 24px"><p class="eyebrow">Über mich</p><h2>Hallo, ich bin Tobias</h2></div>
+      <div class="me-head reveal frame-deco"><p class="eyebrow me-eyebrow">Über mich</p><h2 class="me-title">Hallo, ich bin<span>Tobias</span></h2></div>
       <div class="viewfinder me-photo reveal" id="vf" role="img" aria-label="Porträt von Tobias Sereinig">
         <img src="media/tobias.jpg" alt="" width="800" height="1000" loading="lazy">
         <span class="focus" id="focus"></span>
